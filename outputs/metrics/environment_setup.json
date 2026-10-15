@@ -1,0 +1,75 @@
+{
+  "verified_at": "2026-10-20T19:30:21.221541+13:00",
+  "project_root": "C:\\Users\\leoca\\Kaggle-Competition",
+  "python_executable": "C:\\Users\\leoca\\Kaggle-Competition\\.venv\\Scripts\\python.exe",
+  "python_version": "3.14.3",
+  "base_python_executable": "C:\\Python314\\python.exe",
+  "operating_system": "Windows-11-10.0.26200-SP0",
+  "kernel_name": "enge707-assessment3",
+  "kernel_display_name": "Python (ENGE707 Assessment 3)",
+  "kernel_executable": "C:\\Users\\leoca\\Kaggle-Competition\\.venv\\Scripts\\python.exe",
+  "direct_dependencies": {
+    "torch": "2.14.1+cpu",
+    "torchvision": "0.29.1+cpu",
+    "numpy": "2.5.2",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2",
+    "scikit-learn": "1.9.1",
+    "Pillow": "12.3.0",
+    "jupyterlab": "4.6.4",
+    "ipykernel": "7.4.0",
+    "nbformat": "5.11.1"
+  },
+  "torch_index": "https://download.pytorch.org/whl/cpu",
+  "pip_check": "No broken requirements found.",
+  "notebook_format": "valid nbformat 4.5",
+  "notebook_execution": [
+    {
+      "working_directory": "C:\\Users\\leoca\\Kaggle-Competition\\notebooks",
+      "result": "passed",
+      "executed_code_cells": 4
+    },
+    {
+      "working_directory": "C:\\Users\\leoca\\Kaggle-Competition",
+      "result": "passed",
+      "executed_code_cells": 4
+    }
+  ],
+  "tensor_sum": 10.0,
+  "torch_cuda_build": null,
+  "torch_cuda_is_available": false,
+  "hardware_observation": {
+    "gpu": "NVIDIA GeForce RTX 2060 with Max-Q Design",
+    "vram_mib": 6144,
+    "driver": "512.78"
+  },
+  "observed_errors_and_warnings": [
+    {
+      "stage": "initial sandboxed pip index query",
+      "message": "WinError 10013: socket access forbidden; pip also reported No matching distribution found because the index was unreachable.",
+      "resolution": "Approved network retry succeeded; compatible stable cp314 Windows CPU wheels installed."
+    },
+    {
+      "stage": "version probe while installation was still running",
+      "message": "PackageNotFoundError for jupyterlab",
+      "resolution": "Installation subsequently completed; final imports and version checks passed."
+    },
+    {
+      "stage": "initial sandboxed notebook execution",
+      "message": "IPython profile permission warnings and sqlite3.OperationalError: attempt to write a readonly database; run interrupted.",
+      "resolution": "Approved execution with user-directory and local kernel access succeeded."
+    },
+    {
+      "stage": "successful notebook execution",
+      "message": "pyzmq Proactor event loop warning: additional Tornado selector thread registered.",
+      "resolution": "Non-fatal; notebook execution passed."
+    },
+    {
+      "stage": "successful notebook execution",
+      "message": "IPKernelApp warning: local TCP kernel transport is unencrypted.",
+      "resolution": "Recorded; local environment checks completed."
+    }
+  ],
+  "unresolved_prerequisites": [],
+  "scope": "Setup only; no dataset access, models, pretrained weights, training or Kaggle submission."
+}

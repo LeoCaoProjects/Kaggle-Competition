@@ -1,0 +1,336 @@
+{
+  "checked_at": "2026-10-20T20:21:30.346388+13:00",
+  "training_rows": 63660,
+  "manifest_rows": 63660,
+  "class_distribution": [
+    {
+      "class": "CatEye",
+      "count": 13884,
+      "percentage": 21.8096135721
+    },
+    {
+      "class": "CatFace",
+      "count": 6942,
+      "percentage": 10.9048067861
+    },
+    {
+      "class": "CatMouth",
+      "count": 6942,
+      "percentage": 10.9048067861
+    },
+    {
+      "class": "CatNose",
+      "count": 6942,
+      "percentage": 10.9048067861
+    },
+    {
+      "class": "DogEye",
+      "count": 11580,
+      "percentage": 18.1903864279
+    },
+    {
+      "class": "DogFace",
+      "count": 5790,
+      "percentage": 9.0951932139
+    },
+    {
+      "class": "DogMouth",
+      "count": 5790,
+      "percentage": 9.0951932139
+    },
+    {
+      "class": "DogNose",
+      "count": 5790,
+      "percentage": 9.0951932139
+    }
+  ],
+  "largest_smallest_class_ratio": 2.397927461139896,
+  "quality": {
+    "decode_status_counts": {
+      "ok": 63660
+    },
+    "unreadable_image_count": 0,
+    "decode_errors": [],
+    "warning_image_count": 0,
+    "warning_image_ids": [],
+    "warning_messages": [],
+    "byte_hash_error_count": 0,
+    "byte_hash_errors": [],
+    "multi_frame_image_count": 0,
+    "format_counts": {
+      "JPEG": 63660
+    },
+    "original_mode_counts": {
+      "RGB": 63660
+    },
+    "dimension_statistics_successful_decodes": {
+      "width": {
+        "count": 63660.0,
+        "mean": 113.0952089224,
+        "std": 98.4918014081,
+        "min": 4.0,
+        "25%": 54.0,
+        "50%": 84.0,
+        "75%": 138.0,
+        "max": 2219.0
+      },
+      "height": {
+        "count": 63660.0,
+        "mean": 109.7378573673,
+        "std": 101.9111458118,
+        "min": 4.0,
+        "25%": 50.0,
+        "50%": 80.0,
+        "75%": 130.0,
+        "max": 2219.0
+      },
+      "aspect_ratio": {
+        "count": 63660.0,
+        "mean": 1.0635262338,
+        "std": 0.1890167063,
+        "min": 0.4026315789,
+        "25%": 1.0,
+        "50%": 1.0,
+        "75%": 1.0,
+        "max": 10.0
+      }
+    },
+    "unique_decoded_dimensions": 7861,
+    "most_common_dimensions": [
+      {
+        "width": 40,
+        "height": 40,
+        "count": 1062
+      },
+      {
+        "width": 48,
+        "height": 48,
+        "count": 1051
+      },
+      {
+        "width": 42,
+        "height": 42,
+        "count": 1050
+      },
+      {
+        "width": 44,
+        "height": 44,
+        "count": 1002
+      },
+      {
+        "width": 38,
+        "height": 38,
+        "count": 1002
+      },
+      {
+        "width": 46,
+        "height": 46,
+        "count": 985
+      },
+      {
+        "width": 34,
+        "height": 34,
+        "count": 978
+      },
+      {
+        "width": 36,
+        "height": 36,
+        "count": 963
+      },
+      {
+        "width": 54,
+        "height": 54,
+        "count": 952
+      },
+      {
+        "width": 52,
+        "height": 52,
+        "count": 928
+      }
+    ]
+  },
+  "duplicates": {
+    "byte": {
+      "groups": 15,
+      "affected_images": 30,
+      "consistent_label_groups": 15,
+      "conflicting_label_groups": 0,
+      "conflicting_label_images": 0
+    },
+    "pixel": {
+      "groups": 15,
+      "affected_images": 30,
+      "consistent_label_groups": 15,
+      "conflicting_label_groups": 0,
+      "conflicting_label_images": 0,
+      "groups_with_different_file_bytes": 0
+    },
+    "unique_affected_images_across_types": 30,
+    "unique_conflicting_images_across_types": 0
+  },
+  "hashing": {
+    "byte": "SHA-256 over complete original file bytes, streamed.",
+    "pixel": "SHA-256 over b'ENGE707-RGB-v1\\0' + struct.pack('>QQ', width, height) + row-major uint8 Pillow convert('RGB') bytes of frame 0; no EXIF transpose or ICC transform.",
+    "pillow_version": "12.3.0",
+    "group_id": "duplicate_type + ':' + full SHA-256 digest; memberships saved for future splitting."
+  },
+  "provenance": {
+    "label_columns": [
+      "image_id",
+      "class"
+    ],
+    "archive_name": "enge-707-2026-s-2-cat-and-dog-facial-feature-classification-ch.zip",
+    "training_labels": "data/raw/train_labels.csv",
+    "training_directory": "data/raw/train/train",
+    "embedded_metadata_key_counts": {
+      "jfif": 63660,
+      "jfif_density": 63660,
+      "jfif_unit": 63660,
+      "jfif_version": 63660
+    },
+    "exif_tag_name_counts": {},
+    "verified_animal_or_source_groups": null
+  },
+  "gallery": {
+    "seed": 42,
+    "selection": [
+      {
+        "image_id": "41901",
+        "class": "CatEye"
+      },
+      {
+        "image_id": "05658",
+        "class": "CatEye"
+      },
+      {
+        "image_id": "49491",
+        "class": "CatEye"
+      },
+      {
+        "image_id": "05416",
+        "class": "CatFace"
+      },
+      {
+        "image_id": "44486",
+        "class": "CatFace"
+      },
+      {
+        "image_id": "54522",
+        "class": "CatFace"
+      },
+      {
+        "image_id": "33135",
+        "class": "CatMouth"
+      },
+      {
+        "image_id": "62104",
+        "class": "CatMouth"
+      },
+      {
+        "image_id": "46489",
+        "class": "CatMouth"
+      },
+      {
+        "image_id": "33325",
+        "class": "CatNose"
+      },
+      {
+        "image_id": "50774",
+        "class": "CatNose"
+      },
+      {
+        "image_id": "08092",
+        "class": "CatNose"
+      },
+      {
+        "image_id": "31338",
+        "class": "DogEye"
+      },
+      {
+        "image_id": "23392",
+        "class": "DogEye"
+      },
+      {
+        "image_id": "11485",
+        "class": "DogEye"
+      },
+      {
+        "image_id": "52288",
+        "class": "DogFace"
+      },
+      {
+        "image_id": "41507",
+        "class": "DogFace"
+      },
+      {
+        "image_id": "25921",
+        "class": "DogFace"
+      },
+      {
+        "image_id": "28742",
+        "class": "DogMouth"
+      },
+      {
+        "image_id": "06030",
+        "class": "DogMouth"
+      },
+      {
+        "image_id": "14741",
+        "class": "DogMouth"
+      },
+      {
+        "image_id": "52590",
+        "class": "DogNose"
+      },
+      {
+        "image_id": "54498",
+        "class": "DogNose"
+      },
+      {
+        "image_id": "04049",
+        "class": "DogNose"
+      }
+    ],
+    "errors": []
+  },
+  "execution": {
+    "python_executable": "C:\\Users\\leoca\\Kaggle-Competition\\.venv\\Scripts\\python.exe",
+    "kernel_name": "enge707-assessment3",
+    "working_directory": "C:\\Users\\leoca\\Kaggle-Competition",
+    "full_audit_runs_this_execution": 1
+  },
+  "outputs": [
+    "data/processed/training_manifest.csv",
+    "outputs/metrics/training_duplicate_groups.csv",
+    "outputs/figures/training_class_distribution.png",
+    "outputs/figures/training_dimension_distribution.png",
+    "outputs/figures/training_gallery_seed42.png",
+    "outputs/metrics/training_data_audit.json"
+  ],
+  "checks": {
+    "manifest_covers_every_labelled_row_in_original_order": true,
+    "manifest_rows_equal_expected_count": true,
+    "class_counts_total": true,
+    "class_percentages_total": true,
+    "all_paths_training_only": true,
+    "every_row_has_recorded_decode_outcome": true,
+    "successful_decodes_have_dimensions_and_pixel_hashes": true,
+    "byte_hashes_or_errors_recorded": true,
+    "duplicate_group_membership_sizes_hashes_and_labels_consistent": true,
+    "gallery_three_per_class": true,
+    "gallery_rendered_without_errors": true,
+    "saved_outputs_exist_and_nonempty": true
+  },
+  "failed_checks": [],
+  "limitations": [
+    "Exact file and decoded RGB hashes do not detect all near-duplicates, related crops or shared animals/sources.",
+    "No verified animal/source group identifiers are available in the label CSV; numeric filenames are not treated as groups.",
+    "Pixel hash uses Pillow RGB conversion and frame 0 without EXIF rotation, ICC management or resizing; decoder/version differences can affect equality.",
+    "Byte and pixel duplicate groups overlap; keep their union together when making a future leakage-safe split.",
+    "No raw files, labels or rows were changed; no split, augmentation, model or training was created."
+  ],
+  "decisions_before_splitting": [
+    "Assess unknown related crops/near-duplicates and unavailable animal/source provenance before choosing a splitting strategy.",
+    "Keep overlapping byte/pixel duplicate memberships together in any later split; do not count overlapping groups twice."
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "checked_at": "2026-10-20T20:03:58.484322+13:00",
+  "project_root": "C:\\Users\\leoca\\Kaggle-Competition",
+  "archive": {
+    "path": "C:\\Users\\leoca\\Kaggle-Competition\\data\\raw\\enge-707-2026-s-2-cat-and-dog-facial-feature-classification-ch.zip",
+    "file_count": 93105,
+    "uncompressed_bytes": 1015208251,
+    "files_by_directory": {
+      ".": 2,
+      "test/test": 29443,
+      "train/train": 63660
+    },
+    "unsafe_members": [],
+    "extraction_policy": "Preserve structure; exclusive creation; skip only identical existing files; reject conflicts and links.",
+    "original_and_existing_local_zip_preserved": true
+  },
+  "csv": {
+    "train": {
+      "path": "data/raw/train_labels.csv",
+      "columns": [
+        "image_id",
+        "class"
+      ],
+      "row_count": 63660,
+      "missing_values": {
+        "image_id": 0,
+        "class": 0
+      },
+      "duplicate_id_rows": 0,
+      "all_rows_with_duplicate_ids": 0
+    },
+    "sample_submission": {
+      "path": "data/raw/sample_submission.csv",
+      "columns": [
+        "image_id",
+        "class"
+      ],
+      "row_count": 29443,
+      "missing_values": {
+        "image_id": 0,
+        "class": 0
+      },
+      "duplicate_id_rows": 0,
+      "all_rows_with_duplicate_ids": 0
+    }
+  },
+  "images": {
+    "train_directory": "data/raw/train/train",
+    "training_count": 63660,
+    "test_directory": "data/raw/test/test",
+    "test_count": 29443
+  },
+  "training_classes": [
+    "CatEye",
+    "CatFace",
+    "CatMouth",
+    "CatNose",
+    "DogEye",
+    "DogFace",
+    "DogMouth",
+    "DogNose"
+  ],
+  "mapping_rules": {
+    "train": "Five-digit original image_id + '.jpg'; exact match.",
+    "sample_submission": "Unpadded original image_id.zfill(5) + '.jpg'; original ID unchanged.",
+    "sample_classes": "Placeholders only; never treated as test labels.",
+    "csv_handling": "dtype=str, keep_default_na=False, na_filter=False; original formatting and row order preserved."
+  },
+  "mapping": {
+    "train": {
+      "rows_checked": 63660,
+      "matched_rows": 63660,
+      "missing_count": 0,
+      "missing_examples": [],
+      "ambiguous_count": 0,
+      "ambiguous_examples": [],
+      "many_to_one_mapping_count": 0,
+      "unused_image_count": 0,
+      "unused_image_examples": [],
+      "examples_in_original_row_order": [
+        {
+          "original_id": "00001",
+          "filename": "00001.jpg"
+        },
+        {
+          "original_id": "00002",
+          "filename": "00002.jpg"
+        },
+        {
+          "original_id": "00003",
+          "filename": "00003.jpg"
+        }
+      ]
+    },
+    "sample_submission": {
+      "rows_checked": 29443,
+      "matched_rows": 29443,
+      "missing_count": 0,
+      "missing_examples": [],
+      "ambiguous_count": 0,
+      "ambiguous_examples": [],
+      "many_to_one_mapping_count": 0,
+      "unused_image_count": 0,
+      "unused_image_examples": [],
+      "examples_in_original_row_order": [
+        {
+          "original_id": "1",
+          "filename": "00001.jpg"
+        },
+        {
+          "original_id": "2",
+          "filename": "00002.jpg"
+        },
+        {
+          "original_id": "3",
+          "filename": "00003.jpg"
+        }
+      ]
+    }
+  },
+  "checks": {
+    "archive_paths_safe_no_links": true,
+    "archive_paths_unique_case_insensitive": true,
+    "all_archive_files_extracted": true,
+    "train_columns": true,
+    "sample_columns": true,
+    "train_no_missing_values": true,
+    "train_unique_ids": true,
+    "sample_submission_no_missing_values": true,
+    "sample_submission_unique_ids": true,
+    "eight_training_classes": true,
+    "train_filename_convention": true,
+    "test_filename_convention": true,
+    "training_ids_five_digits": true,
+    "submission_ids_unpadded_positive_decimals": true,
+    "train_test_directories_distinct": true,
+    "train_every_row_exactly_one_image": true,
+    "train_one_to_one_full_image_coverage": true,
+    "sample_submission_every_row_exactly_one_image": true,
+    "sample_submission_one_to_one_full_image_coverage": true,
+    "training_row_image_counts_equal": true,
+    "submission_row_test_image_counts_equal": true,
+    "all_images_accounted_for": true
+  },
+  "failed_checks": [],
+  "execution": {
+    "root": {
+      "working_directory": "C:\\Users\\leoca\\Kaggle-Competition",
+      "python_executable": "C:\\Users\\leoca\\Kaggle-Competition\\.venv\\Scripts\\python.exe",
+      "kernel_name": "enge707-assessment3",
+      "passed": true
+    },
+    "notebooks": {
+      "working_directory": "C:\\Users\\leoca\\Kaggle-Competition\\notebooks",
+      "python_executable": "C:\\Users\\leoca\\Kaggle-Competition\\.venv\\Scripts\\python.exe",
+      "kernel_name": "enge707-assessment3",
+      "passed": true
+    }
+  }
+}
