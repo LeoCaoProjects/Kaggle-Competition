@@ -1,0 +1,348 @@
+{
+  "checked_at": "2026-10-20T21:05:20.923614+13:00",
+  "configuration": {
+    "seed": 42,
+    "seeded_libraries": [
+      "random",
+      "numpy",
+      "torch"
+    ],
+    "batch_size": 32,
+    "num_workers": 0,
+    "drop_last": false,
+    "training_shuffle": true,
+    "training_generator_seed": 42,
+    "validation_shuffle": false,
+    "augmentation_order": [
+      "RGB",
+      "RandomHorizontalFlip(p=0.5)",
+      "ColorJitter(brightness=0.1, contrast=0.1)",
+      "reference_preprocess"
+    ],
+    "validation": "reference_preprocess only",
+    "resize_rounding": "notebook03 exact half-up integer formula",
+    "padding_rgb": [
+      128,
+      128,
+      128
+    ],
+    "padding": "odd extra pixel right/bottom; after augmentation",
+    "tensor": "float32 CHW [3,224,224], /255 once; no pretrained normalisation",
+    "class_weighting": false,
+    "resampling": false,
+    "decoded_dataset_cache": false
+  },
+  "dataset_lengths": {
+    "train": 50927,
+    "validation": 12733
+  },
+  "loader_batch_counts": {
+    "train": 1592,
+    "validation": 398
+  },
+  "final_batch_sizes_from_counts": {
+    "train": 15,
+    "validation": 29
+  },
+  "observed_batches": {
+    "train": {
+      "shape": [
+        32,
+        3,
+        224,
+        224
+      ],
+      "dtype": "torch.float32",
+      "label_dtype": "torch.int64",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "ids": [
+        "13629",
+        "26443",
+        "43926",
+        "45022",
+        "18078",
+        "48086",
+        "31832",
+        "51858",
+        "62618",
+        "60559",
+        "30980",
+        "29964",
+        "53580",
+        "48128",
+        "27429",
+        "21063",
+        "38622",
+        "32074",
+        "39672",
+        "18363",
+        "14073",
+        "27588",
+        "01573",
+        "20410",
+        "14234",
+        "45192",
+        "11435",
+        "19385",
+        "04365",
+        "28176",
+        "39764",
+        "41630"
+      ],
+      "checks": {
+        "shape": true,
+        "float32": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "labels_int64": true,
+        "labels_in_0_to_7": true,
+        "labels_match_original_ids": true,
+        "ids_remain_strings": true
+      }
+    },
+    "validation": {
+      "shape": [
+        32,
+        3,
+        224,
+        224
+      ],
+      "dtype": "torch.float32",
+      "label_dtype": "torch.int64",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "ids": [
+        "00015",
+        "00019",
+        "00024",
+        "00028",
+        "00034",
+        "00040",
+        "00045",
+        "00053",
+        "00058",
+        "00062",
+        "00064",
+        "00065",
+        "00071",
+        "00072",
+        "00074",
+        "00077",
+        "00081",
+        "00083",
+        "00088",
+        "00089",
+        "00093",
+        "00102",
+        "00112",
+        "00114",
+        "00116",
+        "00120",
+        "00125",
+        "00128",
+        "00134",
+        "00138",
+        "00139",
+        "00147"
+      ],
+      "checks": {
+        "shape": true,
+        "float32": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "labels_int64": true,
+        "labels_in_0_to_7": true,
+        "labels_match_original_ids": true,
+        "ids_remain_strings": true
+      }
+    }
+  },
+  "preprocessing_parity": [
+    {
+      "image_id": "00017",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "00009",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "00013",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "00008",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "00001",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "00003",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "00002",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "00004",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "14181",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "21923",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "49312",
+      "tensor_equal": true,
+      "geometry_equal": true
+    },
+    {
+      "image_id": "12429",
+      "tensor_equal": true,
+      "geometry_equal": true
+    }
+  ],
+  "validation_repeated_indices": [
+    0,
+    1,
+    6366,
+    12732
+  ],
+  "augmentation_examples": [
+    {
+      "image_id": "00017",
+      "class": "CatEye",
+      "distinct_outputs": 3,
+      "seed_reset_reproduces_sequence": true,
+      "labels_unchanged": true,
+      "fixed_grey_padding": true
+    },
+    {
+      "image_id": "00009",
+      "class": "CatFace",
+      "distinct_outputs": 3,
+      "seed_reset_reproduces_sequence": true,
+      "labels_unchanged": true,
+      "fixed_grey_padding": true
+    },
+    {
+      "image_id": "00013",
+      "class": "CatMouth",
+      "distinct_outputs": 3,
+      "seed_reset_reproduces_sequence": true,
+      "labels_unchanged": true,
+      "fixed_grey_padding": true
+    },
+    {
+      "image_id": "00008",
+      "class": "CatNose",
+      "distinct_outputs": 3,
+      "seed_reset_reproduces_sequence": true,
+      "labels_unchanged": true,
+      "fixed_grey_padding": true
+    },
+    {
+      "image_id": "00001",
+      "class": "DogEye",
+      "distinct_outputs": 3,
+      "seed_reset_reproduces_sequence": true,
+      "labels_unchanged": true,
+      "fixed_grey_padding": true
+    },
+    {
+      "image_id": "00003",
+      "class": "DogFace",
+      "distinct_outputs": 3,
+      "seed_reset_reproduces_sequence": true,
+      "labels_unchanged": true,
+      "fixed_grey_padding": true
+    },
+    {
+      "image_id": "00002",
+      "class": "DogMouth",
+      "distinct_outputs": 3,
+      "seed_reset_reproduces_sequence": true,
+      "labels_unchanged": true,
+      "fixed_grey_padding": true
+    },
+    {
+      "image_id": "00004",
+      "class": "DogNose",
+      "distinct_outputs": 3,
+      "seed_reset_reproduces_sequence": true,
+      "labels_unchanged": true,
+      "fixed_grey_padding": true
+    }
+  ],
+  "protected_file_hashes_before": {
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "data/processed/class_mapping.json": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "notebooks/03_Split_and_Preprocessing.ipynb": "5f17c14ee66d4d87dd17b73d9974fff2ccd18edcfc349a01df264517e9c38df9",
+    "requirements.txt": "1218af1d5ab0e67129821670af97415fd399c492c6c2db5cc4849046b3f40bb9",
+    "requirements-lock.txt": "d1b301a804a7c03a833c15882c963247280063a46cdecb8cf89a881ddb6bf602"
+  },
+  "protected_file_hashes_after": {
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "data/processed/class_mapping.json": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "notebooks/03_Split_and_Preprocessing.ipynb": "5f17c14ee66d4d87dd17b73d9974fff2ccd18edcfc349a01df264517e9c38df9",
+    "requirements.txt": "1218af1d5ab0e67129821670af97415fd399c492c6c2db5cc4849046b3f40bb9",
+    "requirements-lock.txt": "d1b301a804a7c03a833c15882c963247280063a46cdecb8cf89a881ddb6bf602"
+  },
+  "checks": {
+    "saved_dataset_lengths": true,
+    "train_metadata_retains_saved_order": true,
+    "validation_metadata_retains_saved_order": true,
+    "augmentation_is_training_only": true,
+    "notebook03_reference_functions_found": true,
+    "exact_preprocessing_equivalence": true,
+    "geometry_equivalence_224x223": true,
+    "geometry_equivalence_223x224": true,
+    "geometry_equivalence_448x3": true,
+    "geometry_equivalence_1x10000": true,
+    "same_seeds_reproduce_initial_training_batch": true,
+    "training_random_validation_sequential": true,
+    "loader_configuration": true,
+    "loader_batch_counts_include_partial_tails": true,
+    "validation_sampler_covers_manifest_order": true,
+    "validation_initial_batch_order": true,
+    "training_initial_batch_is_shuffled": true,
+    "train_batch_checks": true,
+    "validation_batch_checks": true,
+    "validation_repeated_samples_identical_unaugmented": true,
+    "augmentation_examples_cover_all_eight_training_classes": true,
+    "selected_training_examples_show_stochastic_variation": true,
+    "seed_reset_reproduces_augmentation_sequences": true,
+    "augmentation_preserves_labels_and_fixed_padding": true,
+    "split_mapping_notebook03_and_dependencies_unchanged": true,
+    "augmentation_preview_saved": true
+  },
+  "failed_checks": [],
+  "limitations": [
+    "Identical seeds reproduce a restarted sequence, not identical augmentation every epoch.",
+    "Exact-content grouping does not establish independence of unidentified related crops or source animals.",
+    "Tiny images remain low-detail after resizing; no image or label was removed or corrected."
+  ],
+  "execution": {
+    "python_executable": "C:\\Users\\leoca\\Kaggle-Competition\\.venv\\Scripts\\python.exe",
+    "kernel_name": "enge707-assessment3",
+    "working_directory": "C:\\Users\\leoca\\Kaggle-Competition"
+  }
+}

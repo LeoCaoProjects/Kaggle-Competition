@@ -1,0 +1,589 @@
+{
+  "checked_at": "2026-10-20T20:52:00.659511+13:00",
+  "seed": 42,
+  "splitting_method": {
+    "function": "sklearn.model_selection.train_test_split",
+    "group_identifier": "pixel_sha256",
+    "group_table_order": "full pixel SHA-256 ascending, one row per group",
+    "stratify": "group class",
+    "test_size": 0.2,
+    "random_state": 42,
+    "seed_search": false,
+    "image_level_proportions": "Approximately 80/20 because exact-content groups can have multiple images.",
+    "sklearn_version": "1.9.1"
+  },
+  "source_manifest_sha256": "a42bb60c4cb950791668881767078455ec79b682cda96e52bfbea0c9f80f64cb",
+  "rows": {
+    "total": 63660,
+    "train": 50927,
+    "validation": 12733
+  },
+  "groups": {
+    "total": 63645,
+    "train": 50916,
+    "validation": 12729
+  },
+  "achieved_proportions": {
+    "train_images": 0.7999842915488533,
+    "validation_images": 0.20001570845114672,
+    "train_groups": 0.8,
+    "validation_groups": 0.2
+  },
+  "per_class": [
+    {
+      "class": "CatEye",
+      "train": 11105,
+      "validation": 2779,
+      "total": 13884,
+      "train_within_class_pct": 79.9841544224,
+      "validation_within_class_pct": 20.0158455776,
+      "train_partition_class_pct": 21.8057219157,
+      "validation_partition_class_pct": 21.8251786696
+    },
+    {
+      "class": "CatFace",
+      "train": 5553,
+      "validation": 1389,
+      "total": 6942,
+      "train_within_class_pct": 79.9913569576,
+      "validation_within_class_pct": 20.0086430424,
+      "train_partition_class_pct": 10.9038427553,
+      "validation_partition_class_pct": 10.9086625304
+    },
+    {
+      "class": "CatMouth",
+      "train": 5554,
+      "validation": 1388,
+      "total": 6942,
+      "train_within_class_pct": 80.0057620282,
+      "validation_within_class_pct": 19.9942379718,
+      "train_partition_class_pct": 10.9058063503,
+      "validation_partition_class_pct": 10.9008089217
+    },
+    {
+      "class": "CatNose",
+      "train": 5554,
+      "validation": 1388,
+      "total": 6942,
+      "train_within_class_pct": 80.0057620282,
+      "validation_within_class_pct": 19.9942379718,
+      "train_partition_class_pct": 10.9058063503,
+      "validation_partition_class_pct": 10.9008089217
+    },
+    {
+      "class": "DogEye",
+      "train": 9265,
+      "validation": 2315,
+      "total": 11580,
+      "train_within_class_pct": 80.0086355786,
+      "validation_within_class_pct": 19.9913644214,
+      "train_partition_class_pct": 18.1927072084,
+      "validation_partition_class_pct": 18.1811042174
+    },
+    {
+      "class": "DogFace",
+      "train": 4632,
+      "validation": 1158,
+      "total": 5790,
+      "train_within_class_pct": 80.0,
+      "validation_within_class_pct": 20.0,
+      "train_partition_class_pct": 9.0953718067,
+      "validation_partition_class_pct": 9.0944789131
+    },
+    {
+      "class": "DogMouth",
+      "train": 4632,
+      "validation": 1158,
+      "total": 5790,
+      "train_within_class_pct": 80.0,
+      "validation_within_class_pct": 20.0,
+      "train_partition_class_pct": 9.0953718067,
+      "validation_partition_class_pct": 9.0944789131
+    },
+    {
+      "class": "DogNose",
+      "train": 4632,
+      "validation": 1158,
+      "total": 5790,
+      "train_within_class_pct": 80.0,
+      "validation_within_class_pct": 20.0,
+      "train_partition_class_pct": 9.0953718067,
+      "validation_partition_class_pct": 9.0944789131
+    }
+  ],
+  "cross_partition_overlap_counts": {
+    "image_id": 0,
+    "pixel_sha256": 0,
+    "byte_sha256": 0
+  },
+  "mapping": {
+    "class_to_index": {
+      "CatEye": 0,
+      "CatFace": 1,
+      "CatMouth": 2,
+      "CatNose": 3,
+      "DogEye": 4,
+      "DogFace": 5,
+      "DogMouth": 6,
+      "DogNose": 7
+    },
+    "index_to_class": {
+      "0": "CatEye",
+      "1": "CatFace",
+      "2": "CatMouth",
+      "3": "CatNose",
+      "4": "DogEye",
+      "5": "DogFace",
+      "6": "DogMouth",
+      "7": "DogNose"
+    }
+  },
+  "preprocessing": {
+    "purpose": "reference CNN; pretrained-model normalisation deferred",
+    "input_mode": "RGB",
+    "target_size": [
+      224,
+      224
+    ],
+    "resize": "longest side to 224, including upscaling",
+    "interpolation": "Pillow Image.Resampling.BILINEAR",
+    "rounding": "nearest integer, ties up: max(1,(2*side*224+longest)//(2*longest))",
+    "padding_rgb": [
+      128,
+      128,
+      128
+    ],
+    "padding_placement": "centred, odd extra pixel on right/bottom",
+    "tensor_shape": [
+      3,
+      224,
+      224
+    ],
+    "tensor_dtype": "torch.float32",
+    "scale": "uint8 to float32, divide by 255 once",
+    "range": [
+      0,
+      1
+    ],
+    "augmentation": false,
+    "crop": false,
+    "raw_files_modified": false,
+    "pillow_version": "12.3.0",
+    "torch_version": "2.14.1+cpu"
+  },
+  "sample_selection": "training partition; first sorted ID per class, two smallest areas and min/max aspect ratios; ties by ID",
+  "sample_checks": [
+    {
+      "image_id": "00017",
+      "class": "CatEye",
+      "class_index": 0,
+      "reasons": [
+        "class_example:CatEye"
+      ],
+      "original_width": 66,
+      "original_height": 66,
+      "geometry": {
+        "resized_width": 224,
+        "resized_height": 224,
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "tensor_min": 0.0,
+      "tensor_max": 0.6901960968971252,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "00009",
+      "class": "CatFace",
+      "class_index": 1,
+      "reasons": [
+        "class_example:CatFace"
+      ],
+      "original_width": 343,
+      "original_height": 376,
+      "geometry": {
+        "resized_width": 204,
+        "resized_height": 224,
+        "left": 10,
+        "top": 0,
+        "right": 10,
+        "bottom": 0
+      },
+      "tensor_min": 0.0,
+      "tensor_max": 1.0,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "00013",
+      "class": "CatMouth",
+      "class_index": 2,
+      "reasons": [
+        "class_example:CatMouth"
+      ],
+      "original_width": 98,
+      "original_height": 68,
+      "geometry": {
+        "resized_width": 224,
+        "resized_height": 155,
+        "left": 0,
+        "top": 34,
+        "right": 0,
+        "bottom": 35
+      },
+      "tensor_min": 0.09019608050584793,
+      "tensor_max": 1.0,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "00008",
+      "class": "CatNose",
+      "class_index": 3,
+      "reasons": [
+        "class_example:CatNose"
+      ],
+      "original_width": 128,
+      "original_height": 128,
+      "geometry": {
+        "resized_width": 224,
+        "resized_height": 224,
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "tensor_min": 0.14509804546833038,
+      "tensor_max": 1.0,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "00001",
+      "class": "DogEye",
+      "class_index": 4,
+      "reasons": [
+        "class_example:DogEye"
+      ],
+      "original_width": 36,
+      "original_height": 36,
+      "geometry": {
+        "resized_width": 224,
+        "resized_height": 224,
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "tensor_min": 0.0,
+      "tensor_max": 0.9254902005195618,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "00003",
+      "class": "DogFace",
+      "class_index": 5,
+      "reasons": [
+        "class_example:DogFace"
+      ],
+      "original_width": 97,
+      "original_height": 97,
+      "geometry": {
+        "resized_width": 224,
+        "resized_height": 224,
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "tensor_min": 0.0,
+      "tensor_max": 1.0,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "00002",
+      "class": "DogMouth",
+      "class_index": 6,
+      "reasons": [
+        "class_example:DogMouth"
+      ],
+      "original_width": 214,
+      "original_height": 157,
+      "geometry": {
+        "resized_width": 224,
+        "resized_height": 164,
+        "left": 0,
+        "top": 30,
+        "right": 0,
+        "bottom": 30
+      },
+      "tensor_min": 0.007843137718737125,
+      "tensor_max": 1.0,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "00004",
+      "class": "DogNose",
+      "class_index": 7,
+      "reasons": [
+        "class_example:DogNose"
+      ],
+      "original_width": 110,
+      "original_height": 110,
+      "geometry": {
+        "resized_width": 224,
+        "resized_height": 224,
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "tensor_min": 0.003921568859368563,
+      "tensor_max": 0.9098039269447327,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "14181",
+      "class": "CatEye",
+      "class_index": 0,
+      "reasons": [
+        "smallest_area"
+      ],
+      "original_width": 4,
+      "original_height": 4,
+      "geometry": {
+        "resized_width": 224,
+        "resized_height": 224,
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "tensor_min": 0.019607843831181526,
+      "tensor_max": 0.41960784792900085,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "21923",
+      "class": "CatEye",
+      "class_index": 0,
+      "reasons": [
+        "smallest_area"
+      ],
+      "original_width": 4,
+      "original_height": 4,
+      "geometry": {
+        "resized_width": 224,
+        "resized_height": 224,
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "tensor_min": 0.0313725508749485,
+      "tensor_max": 0.9960784316062927,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "49312",
+      "class": "CatFace",
+      "class_index": 1,
+      "reasons": [
+        "minimum_aspect_ratio"
+      ],
+      "original_width": 153,
+      "original_height": 380,
+      "geometry": {
+        "resized_width": 90,
+        "resized_height": 224,
+        "left": 67,
+        "top": 0,
+        "right": 67,
+        "bottom": 0
+      },
+      "tensor_min": 0.0,
+      "tensor_max": 1.0,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    },
+    {
+      "image_id": "12429",
+      "class": "CatNose",
+      "class_index": 3,
+      "reasons": [
+        "maximum_aspect_ratio"
+      ],
+      "original_width": 50,
+      "original_height": 5,
+      "geometry": {
+        "resized_width": 224,
+        "resized_height": 22,
+        "left": 0,
+        "top": 101,
+        "right": 0,
+        "bottom": 101
+      },
+      "tensor_min": 0.0,
+      "tensor_max": 0.9843137264251709,
+      "checks": {
+        "shape": true,
+        "dtype": true,
+        "finite": true,
+        "range_0_to_1": true,
+        "deterministic": true,
+        "padding_rgb128_scaled_once": true,
+        "longest_side_224": true,
+        "class_round_trip": true
+      }
+    }
+  ],
+  "file_actions": {
+    "split_manifest": "created",
+    "class_mapping": "created"
+  },
+  "checks": {
+    "audited_rows_retained_in_original_order": true,
+    "unique_original_ids": true,
+    "eight_exact_classes": true,
+    "all_rows_successfully_decoded": true,
+    "complete_hashes": true,
+    "paths_are_original_training_images": true,
+    "one_class_per_pixel_group": true,
+    "all_rows_assigned_once": true,
+    "original_manifest_fields_unchanged": true,
+    "pixel_groups_assigned_wholly": true,
+    "all_classes_in_both_partitions": true,
+    "image_id_does_not_cross_partitions": true,
+    "pixel_sha256_does_not_cross_partitions": true,
+    "byte_sha256_does_not_cross_partitions": true,
+    "saved_duplicate_groups_do_not_cross": true,
+    "saved_split_exact_fields_and_membership": true,
+    "class_encoding_round_trips": true,
+    "class_indices_are_zero_to_seven": true,
+    "saved_mapping_matches": true,
+    "odd_padding_goes_right_or_bottom": true,
+    "very_thin_images_keep_at_least_one_pixel": true,
+    "half_up_rounding": true,
+    "preview_uses_training_partition_only": true,
+    "preview_includes_every_class": true,
+    "all_sample_tensor_and_encoding_checks": true,
+    "rerun_verifies_membership_without_rewriting": true,
+    "different_existing_membership_is_rejected_unchanged": true,
+    "requested_outputs_exist": true,
+    "saved_evidence_readable": true
+  },
+  "failed_checks": [],
+  "limitations": [
+    "No reliable animal/source groups are available; numeric IDs are not used as provenance groups.",
+    "Unidentified related crops, animals and near-duplicates may remain across partitions despite zero exact-hash overlap.",
+    "Tiny and elongated images are retained; upscaling cannot recover missing detail and padding can occupy much of the tensor."
+  ],
+  "outputs": [
+    "data/processed/split_manifest.csv",
+    "data/processed/class_mapping.json",
+    "outputs/figures/preprocessing_preview.png",
+    "outputs/metrics/split_preprocessing_check.json"
+  ],
+  "execution": {
+    "python_executable": "C:\\Users\\leoca\\Kaggle-Competition\\.venv\\Scripts\\python.exe",
+    "kernel_name": "enge707-assessment3",
+    "working_directory": "C:\\Users\\leoca\\Kaggle-Competition"
+  }
+}
