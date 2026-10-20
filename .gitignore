@@ -22,12 +22,16 @@ data/raw/*
 !data/raw/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
+!data/processed/class_mapping.json
+!data/processed/split_manifest.csv
+enge707_train_cache/
 *.zip
 *.tar
 *.tar.gz
 *.tgz
 *.7z
 *.rar
+outputs/transfer/
 
 # Model weights; small figures/metrics are intentionally eligible for Git
 outputs/models/*
@@ -39,6 +43,7 @@ outputs/models/*
 *.safetensors
 *.h5
 *.hdf5
+!outputs/models/E0_reference_cnn_seed42_attempt2.pt
 
 # OS files
 Thumbs.db

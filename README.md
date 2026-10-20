@@ -1,11 +1,10 @@
-# ENGE707 Assessment 3 — local environment
+# ENGE707 Assessment 3
 
 Setup for an individual eight-class cat/dog image classification assessment.
-Class spellings will come from the competition labels. Only the supplied
-competition dataset may be used; pretrained weights are permitted later.
-Kaggle is required for prediction submission, but notebooks can run locally.
-This repository currently contains environment checks, data-access checks and a
-training-only image audit.
+Class spellings come from the supplied competition labels. Development and
+checks use the local Python 3.14.3 CPU environment; reference-CNN E0 training
+was completed on Kaggle using one Tesla T4 (`cuda:0`). Only the supplied
+competition dataset is used. Kaggle also provides eventual prediction submission.
 
 ## Windows PowerShell setup
 
@@ -79,6 +78,12 @@ markers rather than assuming a particular repository folder name.
 Run `01_Data_Access_Check.ipynb` with the same kernel to verify the supplied
 data contract; its summary is saved to `outputs/metrics/data_access_check.json`.
 
+Continue in numbered order: 02 training-data audit, 03 fixed split/preprocessing,
+04 augmentation/loaders, 05 CPU reference-CNN checks, 06 Kaggle GPU setup, and
+07 Kaggle reference-CNN training. Notebooks 06–07 use hosted packages and the
+verified transfer bundle, not the local CPU requirements. Notebook 07 keeps
+`RUN_FULL_TRAINING=False` by default; its smoke checks do not start a full run.
+
 ## Directory purposes and conventions
 
 | Path | Purpose |
@@ -87,16 +92,16 @@ data contract; its summary is saved to `outputs/metrics/data_access_check.json`.
 | `notebooks/01_Data_Access_Check.ipynb` | CSV schema, training labels, image counts and exact ID-to-filename checks; no image contents opened |
 | `notebooks/02_Training_Data_Exploration.ipynb` | Training class balance, seeded gallery, decoding audit and exact duplicate memberships |
 | `data/raw/` | Supplied competition CSVs and nested `train/train/` and `test/test/` images, extracted from the provided ZIP |
-| `data/processed/` | Ignored derived data, including the complete training audit manifest |
+| `data/processed/` | Fixed split and class mapping retained; training audit manifest and other derived data ignored |
 | `outputs/figures/` | Small genuine figure evidence, deliberately retained when useful |
 | `outputs/metrics/` | Small genuine metric and experiment evidence |
-| `outputs/models/` | Future local model weights, ignored by Git |
+| `outputs/models/` | The specific small E0 checkpoint below is eligible for Git; other weights remain ignored |
 
 Keep credentials, datasets, image archives, environments and large weights out
 of Git. Only portable VS Code settings are shared; machine-specific editor state
 is ignored. Review outputs before deliberately adding them. ChatGPT Work planning
-documents stay outside this repository. No models, preprocessing, splits,
-training, report paragraphs or Kaggle submission are included here.
+documents stay outside this repository. Preprocessing, the fixed split, reference
+CNN implementation and completed E0 evidence are retained; raw images are excluded.
 
 The prior Phase I/II repository's requested README, requirements, ignore file and
 two representative notebooks could not be fetched during inspection. This setup
@@ -106,11 +111,22 @@ medical data, eLCS dependencies or balancing methods.
 
 ## CPU and verification
 
-This is a CPU-only PyTorch installation. `torch.cuda.is_available()` is expected
+The local environment is a CPU-only PyTorch installation. `torch.cuda.is_available()` is expected
 to be `False`, and `torch.version.cuda` should be `None`. That does not imply the
 computer has no GPU. Hardware inspection found an NVIDIA RTX 2060 Max-Q with
-6144 MiB VRAM and driver 512.78; GPU training will be assessed separately.
+6144 MiB VRAM and driver 512.78; E0 used the separate Kaggle GPU runtime.
 
 See the executed notebook and `outputs/metrics/environment_setup.json` for actual
 versions, checks, hardware observations and setup errors. Environment metadata
 is setup evidence, not dataset analysis or experimental results.
+
+## Saved E0 experiment
+
+`E0_reference_cnn_seed42_attempt2` completed 15 epochs; epoch 15 had the lowest
+validation loss (0.4878515617073935), with validation accuracy 0.8378229796591534.
+The original exported bytes are preserved in:
+
+- `outputs/metrics/E0_reference_cnn_seed42_attempt2/history.csv`
+- `outputs/metrics/E0_reference_cnn_seed42_attempt2/configuration.json`
+- `outputs/models/E0_reference_cnn_seed42_attempt2.pt`
+- `outputs/figures/loss_accuracy_curves.png`

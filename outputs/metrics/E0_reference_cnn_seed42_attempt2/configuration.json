@@ -1,0 +1,110 @@
+{
+  "run_name": "E0_reference_cnn_seed42_attempt2",
+  "seed": 42,
+  "max_epochs": 15,
+  "early_stopping_patience": 3,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "loss": "unweighted CrossEntropyLoss on raw logits",
+  "scheduler": {
+    "name": "ReduceLROnPlateau",
+    "mode": "min",
+    "factor": 0.5,
+    "patience": 2,
+    "threshold": 0.0
+  },
+  "batch_size": 32,
+  "num_workers": 0,
+  "drop_last": false,
+  "device": "cuda:0",
+  "dtype": "float32",
+  "amp": false,
+  "distributed": false,
+  "architecture": "Original ReferenceCNN: 94280 trainable parameters; eight raw logits",
+  "class_mapping": {
+    "class_to_index": {
+      "CatEye": 0,
+      "CatFace": 1,
+      "CatMouth": 2,
+      "CatNose": 3,
+      "DogEye": 4,
+      "DogFace": 5,
+      "DogMouth": 6,
+      "DogNose": 7
+    },
+    "index_to_class": {
+      "0": "CatEye",
+      "1": "CatFace",
+      "2": "CatMouth",
+      "3": "CatNose",
+      "4": "DogEye",
+      "5": "DogFace",
+      "6": "DogMouth",
+      "7": "DogNose"
+    }
+  },
+  "split_sha256": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+  "artifact_sha256": {
+    "src/__init__.py": "020dcda972efec823b23ed96a13c78b70ecd61dc7ae3709390119ee9f2af8963",
+    "preprocessing_fingerprints.json": "2f48903cdc884d27bd536f07751a2ce48e18b0e4f3c8b989d50459a9448b553a",
+    "transfer_manifest.json": "14b63f88302e255b3f2acca0a34377ee35e5dc5fddada8136651d236d36fc8b8",
+    "src/data_pipeline.py": "7551eb3cc71ef4a159ac8543b654f2edfb1d0733177509617ebd1365b409e73a",
+    "data/processed/class_mapping.json": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "src/models.py": "059948071eee111deb31e61899884590347f94669c0ca95a638827f2f05b4c48"
+  },
+  "runtime_versions": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "Pillow": "12.3.0"
+  },
+  "gpu": {
+    "selected_device": "cuda:0",
+    "name": "Tesla T4",
+    "available_memory_bytes": 14196473856,
+    "total_memory_bytes": 15636037632
+  },
+  "training_image_directory": "/kaggle/working/enge707_train_cache",
+  "cache_report": "/kaggle/working/training_image_cache_check.json",
+  "preprocessing": {
+    "augmentation": false,
+    "crop": false,
+    "input_mode": "RGB",
+    "interpolation": "Pillow Image.Resampling.BILINEAR",
+    "padding_placement": "centred, odd extra pixel on right/bottom",
+    "padding_rgb": [
+      128,
+      128,
+      128
+    ],
+    "pillow_version": "12.3.0",
+    "purpose": "reference CNN; pretrained-model normalisation deferred",
+    "range": [
+      0,
+      1
+    ],
+    "raw_files_modified": false,
+    "resize": "longest side to 224, including upscaling",
+    "rounding": "nearest integer, ties up: max(1,(2*side*224+longest)//(2*longest))",
+    "scale": "uint8 to float32, divide by 255 once",
+    "target_size": [
+      224,
+      224
+    ],
+    "tensor_dtype": "torch.float32",
+    "tensor_shape": [
+      3,
+      224,
+      224
+    ],
+    "torch_version": "2.14.1+cpu"
+  },
+  "training_augmentation": [
+    "RandomHorizontalFlip(p=0.5)",
+    "ColorJitter(brightness=0.1,contrast=0.1) before resize/padding"
+  ],
+  "reproducibility": "Seeded, not guaranteed bitwise identical across versions or GPUs"
+}

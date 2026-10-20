@@ -1,0 +1,125 @@
+{
+  "counts": {
+    "total": 63660,
+    "train": 50927,
+    "validation": 12733
+  },
+  "pixel_group_counts": {
+    "total": 63645,
+    "train": 50916,
+    "validation": 12729
+  },
+  "achieved_image_proportions": {
+    "train": 0.7999842915488533,
+    "validation": 0.20001570845114672
+  },
+  "seed": 42,
+  "duplicate_groups": {
+    "basis": "pixel_sha256 groups only; byte duplicates are not counted again",
+    "group_size_distribution": {
+      "1": 63630,
+      "2": 15
+    },
+    "duplicate_group_count": 15,
+    "duplicate_pairs": 15,
+    "affected_images": 30,
+    "all_kept_together": true
+  },
+  "per_class_counts": [
+    {
+      "class": "CatEye",
+      "train": 11105,
+      "validation": 2779
+    },
+    {
+      "class": "CatFace",
+      "train": 5553,
+      "validation": 1389
+    },
+    {
+      "class": "CatMouth",
+      "train": 5554,
+      "validation": 1388
+    },
+    {
+      "class": "CatNose",
+      "train": 5554,
+      "validation": 1388
+    },
+    {
+      "class": "DogEye",
+      "train": 9265,
+      "validation": 2315
+    },
+    {
+      "class": "DogFace",
+      "train": 4632,
+      "validation": 1158
+    },
+    {
+      "class": "DogMouth",
+      "train": 4632,
+      "validation": 1158
+    },
+    {
+      "class": "DogNose",
+      "train": 4632,
+      "validation": 1158
+    }
+  ],
+  "cross_partition_overlap_counts": {
+    "image_id": 0,
+    "byte_sha256": 0,
+    "pixel_sha256": 0
+  },
+  "input_file_hashes_sha256": {
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "outputs/metrics/split_preprocessing_check.json": "1c80be1ee7d778432de540c069eab23819057d89d41fd3f1a67ee648d376d2de",
+    "data/processed/training_manifest.csv": "a42bb60c4cb950791668881767078455ec79b682cda96e52bfbea0c9f80f64cb"
+  },
+  "checks": {
+    "saved_metrics_passed": true,
+    "original_manifest_matches_saved_source_hash": true,
+    "all_original_rows_and_fields_retained": true,
+    "unique_nonempty_ids": true,
+    "only_two_valid_partitions": true,
+    "valid_complete_hashes": true,
+    "group_id_is_pixel_hash": true,
+    "each_pixel_group_has_one_class": true,
+    "each_pixel_group_stays_in_one_partition": true,
+    "all_duplicate_groups_are_the_expected_15_pairs": true,
+    "row_counts_match_metrics": true,
+    "group_counts_match_metrics": true,
+    "counts_match_requested_overview": true,
+    "all_eight_classes_in_both_partitions": true,
+    "overlaps_match_metrics": true,
+    "all_three_overlap_counts_zero": true,
+    "class_counts_CatEye": true,
+    "class_counts_CatFace": true,
+    "class_counts_CatMouth": true,
+    "class_counts_CatNose": true,
+    "class_counts_DogEye": true,
+    "class_counts_DogFace": true,
+    "class_counts_DogMouth": true,
+    "class_counts_DogNose": true,
+    "achieved_proportions_match_metrics": true,
+    "saved_method_is_class_stratified_pixel_groups_seed42": true,
+    "all_text_inside_canvas": true,
+    "input_files_unchanged": true
+  },
+  "failed_checks": [],
+  "saved_split_unchanged": true,
+  "figure": {
+    "path": "outputs/figures/validation_split_overview.png",
+    "inches": [
+      7,
+      5
+    ],
+    "dpi": 300,
+    "pixels": [
+      2100,
+      1500
+    ]
+  },
+  "limitation": "Unknown related crops or source animals may still overlap."
+}

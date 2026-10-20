@@ -1,0 +1,121 @@
+{
+  "source_file": "src/models.py",
+  "source_sha256": "059948071eee111deb31e61899884590347f94669c0ca95a638827f2f05b4c48",
+  "model": "ReferenceCNN",
+  "device": "cpu",
+  "mode": "eval",
+  "gradient_context": "torch.inference_mode",
+  "torch_version": "2.14.1+cpu",
+  "seed": 42,
+  "dummy_input_shape": [
+    1,
+    3,
+    224,
+    224
+  ],
+  "intermediate_shapes_including_batch": {
+    "features.0": [
+      1,
+      32,
+      224,
+      224
+    ],
+    "features.1": [
+      1,
+      32,
+      224,
+      224
+    ],
+    "features.2": [
+      1,
+      32,
+      112,
+      112
+    ],
+    "features.3": [
+      1,
+      64,
+      112,
+      112
+    ],
+    "features.4": [
+      1,
+      64,
+      112,
+      112
+    ],
+    "features.5": [
+      1,
+      64,
+      56,
+      56
+    ],
+    "features.6": [
+      1,
+      128,
+      56,
+      56
+    ],
+    "features.7": [
+      1,
+      128,
+      56,
+      56
+    ],
+    "features.8": [
+      1,
+      128,
+      28,
+      28
+    ],
+    "classifier.0": [
+      1,
+      128,
+      1,
+      1
+    ],
+    "classifier.1": [
+      1,
+      128
+    ],
+    "classifier.2": [
+      1,
+      128
+    ],
+    "classifier.3": [
+      1,
+      8
+    ]
+  },
+  "total_parameters": 94280,
+  "trainable_parameters": 94280,
+  "checks": {
+    "feature_layers_match": true,
+    "classifier_layers_match": true,
+    "convolution_0_configuration": true,
+    "convolution_3_configuration": true,
+    "convolution_6_configuration": true,
+    "max_pool_configuration": true,
+    "head_configuration": true,
+    "parameter_count_94280": true,
+    "every_intermediate_shape_matches": true,
+    "eval_cpu_without_gradients": true,
+    "finite_eight_raw_scores": true,
+    "all_text_inside_canvas": true,
+    "box_titles_and_shapes_do_not_overlap": true,
+    "model_source_unchanged": true
+  },
+  "failed_checks": [],
+  "figure": {
+    "path": "outputs/figures/reference_cnn_architecture.png",
+    "inches": [
+      7,
+      4.5
+    ],
+    "dpi": 300,
+    "pixels": [
+      2100,
+      1350
+    ]
+  }
+}

@@ -66,11 +66,17 @@ class FacialFeatureDataset(Dataset):
     Loading/decoding exceptions propagate: rows are never silently skipped.
     """
 
-    def __init__(self, project_root, split):
+    def __init__(self, project_root, split, training_image_directory=None):
         if split not in {"train", "validation"}:
             raise ValueError("split must be 'train' or 'validation'")
         self.project_root = Path(project_root).resolve()
-        self.training_directory = (self.project_root / "data/raw/train/train").resolve()
+        self.explicit_training_directory = training_image_directory is not None
+        self.training_directory = (
+            Path(training_image_directory).resolve() if self.explicit_training_directory
+            else (self.project_root / "data/raw/train/train").resolve()
+        )
+        if self.explicit_training_directory and not self.training_directory.is_dir():
+            raise ValueError("Explicit training-image directory must exist")
         manifest = pd.read_csv(
             self.project_root / "data/processed/split_manifest.csv",
             dtype=str, keep_default_na=False, na_filter=False,
@@ -86,6 +92,8 @@ class FacialFeatureDataset(Dataset):
             raise ValueError("Saved class mapping does not round-trip")
         if not manifest["image_id"].is_unique or not manifest["split"].isin(["train", "validation"]).all():
             raise ValueError("Invalid IDs or partition names in saved split")
+        if not manifest["image_id"].str.fullmatch(r"[0-9]{5}").all():
+            raise ValueError("Expected original five-digit image IDs")
         if not manifest["class"].isin(self.class_to_index).all():
             raise ValueError("Unknown class in saved split")
         expected_paths = "data/raw/train/train/" + manifest["image_id"] + ".jpg"
@@ -105,7 +113,11 @@ class FacialFeatureDataset(Dataset):
 
     def __getitem__(self, index):
         row = self.rows.iloc[index]
-        path = (self.project_root / row["image_path"]).resolve()
+        # Retain original manifest metadata even when images live on another mount.
+        path = (
+            self.training_directory / f"{row['image_id']}.jpg" if self.explicit_training_directory
+            else self.project_root / row["image_path"]
+        ).resolve()
         if path.parent != self.training_directory:
             raise ValueError(f"Image path leaves the training directory: {path}")
         with Image.open(path) as image:

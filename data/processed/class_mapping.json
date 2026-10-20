@@ -1,0 +1,22 @@
+{
+  "class_to_index": {
+    "CatEye": 0,
+    "CatFace": 1,
+    "CatMouth": 2,
+    "CatNose": 3,
+    "DogEye": 4,
+    "DogFace": 5,
+    "DogMouth": 6,
+    "DogNose": 7
+  },
+  "index_to_class": {
+    "0": "CatEye",
+    "1": "CatFace",
+    "2": "CatMouth",
+    "3": "CatNose",
+    "4": "DogEye",
+    "5": "DogFace",
+    "6": "DogMouth",
+    "7": "DogNose"
+  }
+}
