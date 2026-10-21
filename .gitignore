@@ -44,6 +44,7 @@ outputs/models/*
 *.h5
 *.hdf5
 !outputs/models/E0_reference_cnn_seed42_attempt2.pt
+!outputs/models/E1_mobilenetv2_frozen_seed42.pt
 
 # OS files
 Thumbs.db

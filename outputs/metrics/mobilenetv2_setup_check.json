@@ -1,0 +1,210 @@
+{
+  "status": "passed",
+  "diagnostic_only": true,
+  "checks": {
+    "kaggle_working_directory_available": true,
+    "setup_and_fingerprints_passed": true,
+    "complete_verified_working_cache": true,
+    "pinned_transfer_manifest": true,
+    "session_hashes_match_pinned_manifest": true,
+    "all_split_mapping_source_hashes_match": true,
+    "existing_dataset_module_from_verified_setup": true,
+    "exact_class_mapping": true,
+    "saved_split_counts_ids": true,
+    "duplicate_disjoint_and_all_classes": true,
+    "both_datasets_keep_membership_order": true,
+    "training_only_original_augmentation": true,
+    "validation_deterministic_correct_normalisation": true,
+    "cuda_available": true,
+    "official_explicit_weights_url": true,
+    "downloaded_weights_hash_prefix": true,
+    "classifier_only_trainable": true,
+    "batch_labels_ids_warmup0": true,
+    "finite_normalised_batch_warmup0": true,
+    "features_eval_warmup0": true,
+    "finite_loss_warmup0": true,
+    "finite_nonzero_head_gradients_warmup0": true,
+    "batch_labels_ids_warmup1": true,
+    "finite_normalised_batch_warmup1": true,
+    "features_eval_warmup1": true,
+    "finite_loss_warmup1": true,
+    "finite_nonzero_head_gradients_warmup1": true,
+    "batch_labels_ids_training0": true,
+    "finite_normalised_batch_training0": true,
+    "features_eval_training0": true,
+    "finite_loss_training0": true,
+    "finite_nonzero_head_gradients_training0": true,
+    "batch_labels_ids_training1": true,
+    "finite_normalised_batch_training1": true,
+    "features_eval_training1": true,
+    "finite_loss_training1": true,
+    "finite_nonzero_head_gradients_training1": true,
+    "batch_labels_ids_training2": true,
+    "finite_normalised_batch_training2": true,
+    "features_eval_training2": true,
+    "finite_loss_training2": true,
+    "finite_nonzero_head_gradients_training2": true,
+    "batch_labels_ids_validation0": true,
+    "finite_normalised_batch_validation0": true,
+    "features_eval_validation0": true,
+    "finite_loss_validation0": true,
+    "batch_labels_ids_validation1": true,
+    "finite_normalised_batch_validation1": true,
+    "features_eval_validation1": true,
+    "finite_loss_validation1": true,
+    "validation_prefix_order": true,
+    "classifier_updated": true,
+    "frozen_parameters_and_bn_buffers_unchanged": true,
+    "deterministic_evaluation": true,
+    "temporary_state_roundtrip": true,
+    "verified_inputs_remain_unchanged": true
+  },
+  "failures": [],
+  "configuration": {
+    "seed": 42,
+    "batch_size": 32,
+    "num_workers": 0,
+    "drop_last": false,
+    "training_shuffle": true,
+    "validation_shuffle": false,
+    "device": "cuda:0",
+    "dtype": "float32",
+    "amp": false,
+    "multi_gpu": false,
+    "optimizer": "Adam(classifier only)",
+    "learning_rate": 0.001,
+    "loss": "unweighted CrossEntropyLoss",
+    "diagnostic_budget_seconds": 90
+  },
+  "preprocessing": {
+    "base": "unchanged RGB / bilinear longest-side-224 / grey centre-pad /255",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "normalisation_applications": 1,
+    "adaptation": "Keep reference geometry; do not use official resize232/centre-crop224 preset"
+  },
+  "batch_seconds": {
+    "warmup": [
+      0.15769487499710522,
+      0.12518998599989573
+    ],
+    "training": [
+      0.13210971599983168,
+      0.1255818839999847,
+      0.13913663000130327
+    ],
+    "validation": [
+      0.10828955599936307,
+      0.1114139540004544
+    ]
+  },
+  "completed_batches": {
+    "warmup": 2,
+    "training": 3,
+    "validation": 2
+  },
+  "stop_reasons": [],
+  "limitations": [
+    "Diagnostic updates are discarded; later E1 training needs a fresh seeded pretrained model.",
+    "No E1 experiment, history, learning curves or permanent checkpoint is created.",
+    "The 90s diagnostic budget starts after setup, download and snapshots; one batch can overrun.",
+    "Short loading-inclusive timings include verification overhead and cache effects.",
+    "An epoch projection is rough, not a measured epoch; no GPU bitwise reproducibility claim."
+  ],
+  "input_sha256": {
+    "data/processed/class_mapping.json": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "preprocessing_fingerprints.json": "2f48903cdc884d27bd536f07751a2ce48e18b0e4f3c8b989d50459a9448b553a",
+    "src/__init__.py": "020dcda972efec823b23ed96a13c78b70ecd61dc7ae3709390119ee9f2af8963",
+    "src/data_pipeline.py": "7551eb3cc71ef4a159ac8543b654f2edfb1d0733177509617ebd1365b409e73a",
+    "src/models.py": "059948071eee111deb31e61899884590347f94669c0ca95a638827f2f05b4c48",
+    "transfer_manifest.json": "14b63f88302e255b3f2acca0a34377ee35e5dc5fddada8136651d236d36fc8b8",
+    "setup_report": "3f24fed8b7c8c6166f0bce96a9019fc8144fa50b50b8eaa1d533677a099300a1",
+    "cache_report": "16785369c12668dc68952608a587a5c7beb1f8ea5cac86bd0f7ea0b317bb7232"
+  },
+  "dataset_lengths": {
+    "train": 50927,
+    "validation": 12733
+  },
+  "class_mapping": {
+    "class_to_index": {
+      "CatEye": 0,
+      "CatFace": 1,
+      "CatMouth": 2,
+      "CatNose": 3,
+      "DogEye": 4,
+      "DogFace": 5,
+      "DogMouth": 6,
+      "DogNose": 7
+    },
+    "index_to_class": {
+      "0": "CatEye",
+      "1": "CatFace",
+      "2": "CatMouth",
+      "3": "CatNose",
+      "4": "DogEye",
+      "5": "DogFace",
+      "6": "DogMouth",
+      "7": "DogNose"
+    }
+  },
+  "overlap_counts": {
+    "image_id": 0,
+    "byte_sha256": 0,
+    "pixel_sha256": 0
+  },
+  "training_augmentation": "Compose(\n    RandomHorizontalFlip(p=0.5)\n    ColorJitter(brightness=(0.9, 1.1), contrast=(0.9, 1.1), saturation=None, hue=None)\n)",
+  "runtime": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "Pillow": "12.3.0",
+    "cuda_build": "12.8"
+  },
+  "device": {
+    "selected": "cuda:0",
+    "name": "Tesla T4",
+    "free_bytes": 14194376704,
+    "cpu_threads": 2
+  },
+  "weights": {
+    "identifier": "MobileNet_V2_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/mobilenet_v2-7ebf99e0.pth",
+    "cache_path": "/root/.cache/torch/hub/checkpoints/mobilenet_v2-7ebf99e0.pth",
+    "already_cached": false,
+    "sha256": "7ebf99e03e254b273379b23edca7ec0da9f48273b23a332b93c1c99d49e86e8f"
+  },
+  "parameters": {
+    "total": 2234120,
+    "trainable": 10248
+  },
+  "loader_batches": {
+    "train": 1592,
+    "validation": 398
+  },
+  "temporary_file_cleaned": true,
+  "diagnostic_model_and_optimizer_discarded": true,
+  "elapsed_diagnostic_seconds": 1.246950888998981,
+  "budget_overrun_seconds": 0,
+  "mean_batch_seconds": {
+    "warmup": 0.14144243049850047,
+    "training": 0.1322760766670399,
+    "validation": 0.10985175499990874
+  },
+  "rough_epoch_projection": {
+    "label": "Rough short-sample projection, NOT measured epoch time",
+    "seconds": 254.30451254389118,
+    "minutes": 4.2384085423981865
+  },
+  "failed_checks": []
+}

@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "checks": {
+    "successful_e1_evaluation": true,
+    "complete_one_to_one_filename_coverage": true,
+    "preprocessing_matches_validation": true,
+    "finite_tensors_and_eight_logits": true,
+    "exact_original_id_order": true,
+    "unique_complete_29443_predictions": true,
+    "official_classes_only": true,
+    "original_inputs_unchanged": true,
+    "saved_csv_roundtrip": true
+  },
+  "failed_checks": [],
+  "row_count": 29443,
+  "class_counts": {
+    "CatEye": 6254,
+    "CatFace": 3117,
+    "CatMouth": 3177,
+    "CatNose": 3119,
+    "DogEye": 5628,
+    "DogFace": 2796,
+    "DogMouth": 2781,
+    "DogNose": 2571
+  },
+  "checkpoint_sha256": "4043403fda03a02184038e817395f8001744b8542f99993383e046175b90b968",
+  "configuration_sha256": "95fae4c24b2735728f7dfc6c7bdd2154580e5e2041f7cd07bc2a1ff862dcb4e8",
+  "sample_sha256": "11332aef70a857933ff837b3e4cda33e3a2b919b6f091e305aa11720cce89924",
+  "submission_sha256": "3c5f7b16d71fc649b8d9a40026b8a7328672656f5fea0dfa25c442a107ea0f71",
+  "input_sha256": {
+    "checkpoint": "4043403fda03a02184038e817395f8001744b8542f99993383e046175b90b968",
+    "configuration": "95fae4c24b2735728f7dfc6c7bdd2154580e5e2041f7cd07bc2a1ff862dcb4e8",
+    "history": "b0bbd7134ca16a70fbb480b8895b5debf97007621de16aaa52ad88ec1a36b3ea",
+    "diagnostic": "7083eefa98a4a29ec6e55c5d73787e3fb1101fc8cd79eeb5a0a770e020a939da",
+    "setup_report": "3f24fed8b7c8c6166f0bce96a9019fc8144fa50b50b8eaa1d533677a099300a1",
+    "cache_report": "16785369c12668dc68952608a587a5c7beb1f8ea5cac86bd0f7ea0b317bb7232",
+    "data/processed/class_mapping.json": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "preprocessing_fingerprints.json": "2f48903cdc884d27bd536f07751a2ce48e18b0e4f3c8b989d50459a9448b553a",
+    "src/__init__.py": "020dcda972efec823b23ed96a13c78b70ecd61dc7ae3709390119ee9f2af8963",
+    "src/data_pipeline.py": "7551eb3cc71ef4a159ac8543b654f2edfb1d0733177509617ebd1365b409e73a",
+    "src/models.py": "059948071eee111deb31e61899884590347f94669c0ca95a638827f2f05b4c48",
+    "transfer_manifest.json": "14b63f88302e255b3f2acca0a34377ee35e5dc5fddada8136651d236d36fc8b8",
+    "evaluation": "3a16af2a872ee96dd41598920c2f286f24713fba6ea4aefdd8b00abbc50ead04",
+    "sample_submission": "11332aef70a857933ff837b3e4cda33e3a2b919b6f091e305aa11720cce89924"
+  },
+  "test_directory": "/kaggle/input/datasets/leocaoprojects/enge707-2026-s2/test/test",
+  "id_mapping": "Original sample ID preserved; zfill(5) + '.jpg' for lookup only",
+  "preprocessing": {
+    "base": "unchanged RGB / bilinear longest-side-224 / grey centre-pad /255",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "normalisation_applications": 1,
+    "adaptation": "Keep reference geometry; do not use official resize232/centre-crop224 preset"
+  },
+  "parameters": {
+    "total": 2234120,
+    "trainable": 10248
+  },
+  "device": "cuda:0",
+  "gpu": "Tesla T4",
+  "dtype": "float32",
+  "amp": false,
+  "batch_size": 32,
+  "num_workers": 0,
+  "drop_last": false,
+  "shuffle": false,
+  "first_batch_seconds_loading_inclusive": [
+    2.730120406999049,
+    2.570589077000477,
+    2.7745099860003393
+  ],
+  "rough_runtime_projection": {
+    "label": "Rough projection from first input-mount batches, NOT measured full runtime",
+    "sample_batches": 3,
+    "seconds": 2479.0923772899587
+  },
+  "inference_seconds_loading_inclusive": 2341.6826248180005,
+  "completed_batches": 921,
+  "runtime": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "Pillow": "12.3.0",
+    "cuda_build": "12.8"
+  },
+  "outputs": [
+    "/kaggle/working/submission_E1.csv",
+    "/kaggle/working/submission_E1_check.json"
+  ],
+  "limitations": [
+    "Predicted class counts are not hidden-test labels or accuracy.",
+    "Input-mount timings include startup/cache effects; no cached-validation speed assumption.",
+    "No competition upload was performed."
+  ]
+}

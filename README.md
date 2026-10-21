@@ -2,7 +2,7 @@
 
 Setup for an individual eight-class cat/dog image classification assessment.
 Class spellings come from the supplied competition labels. Development and
-checks use the local Python 3.14.3 CPU environment; reference-CNN E0 training
+checks use the local Python 3.14.3 CPU environment; E0 and E1 training
 was completed on Kaggle using one Tesla T4 (`cuda:0`). Only the supplied
 competition dataset is used. Kaggle also provides eventual prediction submission.
 
@@ -84,6 +84,19 @@ Continue in numbered order: 02 training-data audit, 03 fixed split/preprocessing
 verified transfer bundle, not the local CPU requirements. Notebook 07 keeps
 `RUN_FULL_TRAINING=False` by default; its smoke checks do not start a full run.
 
+`08_MobileNetV2_Setup.ipynb` contains E1 setup and guarded training cells for the
+existing Kaggle session. It freezes pretrained MobileNetV2 features/BatchNorm,
+trains only the eight-class head,
+and adds ImageNet normalisation to the existing resize/pad tensors. It deliberately
+does not use the weights' centre-crop preset. Full E1 training is disabled by default.
+
+The final notebook08 cell prepares E1 test predictions after a successful saved
+E1 evaluation. Paste only that new cell into the existing Kaggle session; leave
+`RUN_TEST_PREDICTION=False` until deliberately enabling inference. It preserves
+original sample IDs and writes `/kaggle/working/submission_E1.csv` plus
+`submission_E1_check.json`. Existing outputs stop the run; no competition upload
+is performed. Do not restart, Run All or recopy images for this step.
+
 ## Directory purposes and conventions
 
 | Path | Purpose |
@@ -95,7 +108,7 @@ verified transfer bundle, not the local CPU requirements. Notebook 07 keeps
 | `data/processed/` | Fixed split and class mapping retained; training audit manifest and other derived data ignored |
 | `outputs/figures/` | Small genuine figure evidence, deliberately retained when useful |
 | `outputs/metrics/` | Small genuine metric and experiment evidence |
-| `outputs/models/` | The specific small E0 checkpoint below is eligible for Git; other weights remain ignored |
+| `outputs/models/` | The specific preserved E0/E1 checkpoints are eligible for Git; other weights remain ignored |
 
 Keep credentials, datasets, image archives, environments and large weights out
 of Git. Only portable VS Code settings are shared; machine-specific editor state
@@ -130,3 +143,35 @@ The original exported bytes are preserved in:
 - `outputs/metrics/E0_reference_cnn_seed42_attempt2/configuration.json`
 - `outputs/models/E0_reference_cnn_seed42_attempt2.pt`
 - `outputs/figures/loss_accuracy_curves.png`
+
+The completed evaluation of all 12,733 saved validation images is preserved in:
+
+- `outputs/metrics/E0_reference_cnn_seed42_attempt2/validation_metrics.json`
+- `outputs/metrics/E0_reference_cnn_seed42_attempt2/classification_report.csv`
+- `outputs/metrics/E0_reference_cnn_seed42_attempt2/validation_predictions.csv`
+- `outputs/figures/E0_reference_cnn_confusion_matrix.png`
+
+## Saved E1 experiment
+
+`E1_mobilenetv2_frozen_seed42` completed 10 epochs with frozen pretrained features
+and classifier-only training. Epoch 10 had the lowest validation loss
+(0.1460895589143588), with validation accuracy 0.9508364093300872.
+The original exported bytes are preserved in:
+
+- `outputs/metrics/E1_mobilenetv2_frozen_seed42/history.csv`
+- `outputs/metrics/E1_mobilenetv2_frozen_seed42/configuration.json`
+- `outputs/models/E1_mobilenetv2_frozen_seed42.pt`
+- `outputs/figures/E1_mobilenetv2_loss_accuracy_curves.png`
+- `outputs/metrics/mobilenetv2_setup_check.json`
+
+The completed E1 evaluation retains all 12,733 validation images and is saved in:
+
+- `outputs/metrics/E1_mobilenetv2_frozen_seed42/validation_metrics.json`
+- `outputs/metrics/E1_mobilenetv2_frozen_seed42/classification_report.csv`
+- `outputs/metrics/E1_mobilenetv2_frozen_seed42/validation_predictions.csv`
+- `outputs/figures/E1_mobilenetv2_confusion_matrix.png`
+
+The first submission and its verification record are preserved in
+`outputs/submissions/submission_E1.csv` and
+`outputs/metrics/submission_E1_check.json`.
+User-confirmed first Kaggle score: **0.9218**.

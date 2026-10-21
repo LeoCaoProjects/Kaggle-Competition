@@ -1,0 +1,317 @@
+{
+  "status": "passed",
+  "evaluation_only": true,
+  "run_name": "E0_reference_cnn_seed42_attempt2",
+  "best_epoch": 15,
+  "device": "cuda:0",
+  "gpu": "Tesla T4",
+  "dtype": "float32",
+  "batch_size": 32,
+  "num_workers": 0,
+  "drop_last": false,
+  "shuffle": false,
+  "augmentation": false,
+  "trainable_parameters": 94280,
+  "samples": 12733,
+  "cross_entropy": 0.4878515617073935,
+  "accuracy": 0.8378229796591534,
+  "macro_f1": 0.8427189475993051,
+  "weighted_f1": 0.8384489611918255,
+  "class_mapping": {
+    "class_to_index": {
+      "CatEye": 0,
+      "CatFace": 1,
+      "CatMouth": 2,
+      "CatNose": 3,
+      "DogEye": 4,
+      "DogFace": 5,
+      "DogMouth": 6,
+      "DogNose": 7
+    },
+    "index_to_class": {
+      "0": "CatEye",
+      "1": "CatFace",
+      "2": "CatMouth",
+      "3": "CatNose",
+      "4": "DogEye",
+      "5": "DogFace",
+      "6": "DogMouth",
+      "7": "DogNose"
+    }
+  },
+  "per_class": [
+    {
+      "class_index": 0,
+      "class": "CatEye",
+      "precision": 0.9066022544283414,
+      "recall": 0.810363440086362,
+      "f1": 0.8557856735702071,
+      "support": 2779
+    },
+    {
+      "class_index": 1,
+      "class": "CatFace",
+      "precision": 0.9574944071588367,
+      "recall": 0.9244060475161987,
+      "f1": 0.9406593406593406,
+      "support": 1389
+    },
+    {
+      "class_index": 2,
+      "class": "CatMouth",
+      "precision": 0.9464534075104312,
+      "recall": 0.9805475504322767,
+      "f1": 0.9631988676574664,
+      "support": 1388
+    },
+    {
+      "class_index": 3,
+      "class": "CatNose",
+      "precision": 0.8255086071987481,
+      "recall": 0.7600864553314121,
+      "f1": 0.7914478619654913,
+      "support": 1388
+    },
+    {
+      "class_index": 4,
+      "class": "DogEye",
+      "precision": 0.6562190696139888,
+      "recall": 0.8591792656587472,
+      "f1": 0.7441077441077442,
+      "support": 2315
+    },
+    {
+      "class_index": 5,
+      "class": "DogFace",
+      "precision": 0.8390064397424103,
+      "recall": 0.7875647668393783,
+      "f1": 0.8124721603563474,
+      "support": 1158
+    },
+    {
+      "class_index": 6,
+      "class": "DogMouth",
+      "precision": 0.9634664401019541,
+      "recall": 0.9792746113989638,
+      "f1": 0.9713062098501071,
+      "support": 1158
+    },
+    {
+      "class_index": 7,
+      "class": "DogNose",
+      "precision": 0.7591973244147158,
+      "recall": 0.5880829015544041,
+      "f1": 0.6627737226277373,
+      "support": 1158
+    }
+  ],
+  "confusion_matrix": [
+    [
+      2252,
+      4,
+      1,
+      67,
+      404,
+      17,
+      1,
+      33
+    ],
+    [
+      6,
+      1284,
+      48,
+      4,
+      2,
+      27,
+      17,
+      1
+    ],
+    [
+      0,
+      5,
+      1361,
+      0,
+      0,
+      0,
+      22,
+      0
+    ],
+    [
+      69,
+      2,
+      9,
+      1055,
+      177,
+      14,
+      0,
+      62
+    ],
+    [
+      105,
+      2,
+      0,
+      67,
+      1989,
+      69,
+      0,
+      83
+    ],
+    [
+      13,
+      40,
+      0,
+      30,
+      124,
+      912,
+      2,
+      37
+    ],
+    [
+      0,
+      4,
+      19,
+      0,
+      0,
+      1,
+      1134,
+      0
+    ],
+    [
+      39,
+      0,
+      0,
+      55,
+      335,
+      47,
+      1,
+      681
+    ]
+  ],
+  "row_normalised_confusion_matrix": [
+    [
+      0.810363440086362,
+      0.0014393666786613889,
+      0.0003598416696653472,
+      0.024109391867578267,
+      0.14537603454480028,
+      0.0061173083843109035,
+      0.0003598416696653472,
+      0.01187477509895646
+    ],
+    [
+      0.004319654427645789,
+      0.9244060475161987,
+      0.03455723542116631,
+      0.0028797696184305254,
+      0.0014398848092152627,
+      0.019438444924406047,
+      0.012239020878329733,
+      0.0007199424046076314
+    ],
+    [
+      0.0,
+      0.0036023054755043226,
+      0.9805475504322767,
+      0.0,
+      0.0,
+      0.0,
+      0.01585014409221902,
+      0.0
+    ],
+    [
+      0.04971181556195965,
+      0.001440922190201729,
+      0.006484149855907781,
+      0.7600864553314121,
+      0.12752161383285301,
+      0.010086455331412104,
+      0.0,
+      0.0446685878962536
+    ],
+    [
+      0.04535637149028078,
+      0.0008639308855291577,
+      0.0,
+      0.028941684665226782,
+      0.8591792656587472,
+      0.029805615550755938,
+      0.0,
+      0.035853131749460046
+    ],
+    [
+      0.011226252158894647,
+      0.03454231433506045,
+      0.0,
+      0.025906735751295335,
+      0.1070811744386874,
+      0.7875647668393783,
+      0.0017271157167530224,
+      0.03195164075993091
+    ],
+    [
+      0.0,
+      0.0034542314335060447,
+      0.016407599309153715,
+      0.0,
+      0.0,
+      0.0008635578583765112,
+      0.9792746113989638,
+      0.0
+    ],
+    [
+      0.03367875647668394,
+      0.0,
+      0.0,
+      0.047495682210708115,
+      0.28929188255613125,
+      0.04058721934369603,
+      0.0008635578583765112,
+      0.5880829015544041
+    ]
+  ],
+  "input_sha256": {
+    "checkpoint": "1fbf6b253c4b7e34e07626b6ab564e2f931ecfbd0ed956e15baebe862158b8fa",
+    "configuration": "9ce3300d41882e34341d5227bc427385979f5de1d1c823e2cbfd3bc0deef131f",
+    "history": "5f32dc9cb98546e105ed58b5f657e40b3a3de56dc47d83ce1f56e5380b05a2dc",
+    "cache_report": "16785369c12668dc68952608a587a5c7beb1f8ea5cac86bd0f7ea0b317bb7232",
+    "src/__init__.py": "020dcda972efec823b23ed96a13c78b70ecd61dc7ae3709390119ee9f2af8963",
+    "preprocessing_fingerprints.json": "2f48903cdc884d27bd536f07751a2ce48e18b0e4f3c8b989d50459a9448b553a",
+    "transfer_manifest.json": "14b63f88302e255b3f2acca0a34377ee35e5dc5fddada8136651d236d36fc8b8",
+    "src/data_pipeline.py": "7551eb3cc71ef4a159ac8543b654f2edfb1d0733177509617ebd1365b409e73a",
+    "data/processed/class_mapping.json": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "src/models.py": "059948071eee111deb31e61899884590347f94669c0ca95a638827f2f05b4c48"
+  },
+  "checks": {
+    "exact_id_coverage_and_order": true,
+    "true_labels_match": true,
+    "class_supports_match": true,
+    "prediction_indices_in_range": true,
+    "finite_metrics_and_confidence": true,
+    "confidence_in_range": true,
+    "confusion_total_matches": true,
+    "normalised_rows_sum_to_one": true,
+    "original_inputs_unchanged": true
+  },
+  "history_comparison": {
+    "epoch": 15,
+    "history_accuracy": 0.8378229796591534,
+    "history_loss": 0.4878515617073935,
+    "accuracy_difference": 0.0,
+    "loss_difference": 0.0,
+    "accuracy_matches_exactly": true,
+    "loss_absolute_tolerance": 1e-06,
+    "loss_matches_within_tolerance": true
+  },
+  "runtime": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3"
+  },
+  "warnings": [],
+  "limitations": [
+    "No cross-version/GPU bitwise reproducibility claim.",
+    "Undefined per-class precision/F1 uses zero_division=0."
+  ]
+}

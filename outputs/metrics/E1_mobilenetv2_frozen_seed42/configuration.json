@@ -1,0 +1,112 @@
+{
+  "run_name": "E1_mobilenetv2_frozen_seed42",
+  "seed": 42,
+  "max_epochs": 10,
+  "early_stopping_patience": 3,
+  "optimizer": "Adam",
+  "optimizer_parameters": "classifier only",
+  "learning_rate": 0.001,
+  "loss": "unweighted CrossEntropyLoss on raw logits",
+  "best_checkpoint_rule": "lowest validation loss",
+  "scheduler": {
+    "name": "ReduceLROnPlateau",
+    "mode": "min",
+    "factor": 0.5,
+    "patience": 2,
+    "threshold": 0,
+    "threshold_mode": "abs"
+  },
+  "batch_size": 32,
+  "num_workers": 0,
+  "drop_last": false,
+  "train_shuffle": true,
+  "validation_shuffle": false,
+  "device": "cuda:0",
+  "dtype": "float32",
+  "amp": false,
+  "multi_gpu": false,
+  "architecture": "FrozenMobileNetV2; Dropout(0.3), Linear(last_channel,8), raw logits",
+  "parameters": {
+    "total": 2234120,
+    "trainable": 10248
+  },
+  "weights": {
+    "identifier": "MobileNet_V2_Weights.IMAGENET1K_V2",
+    "url": "https://download.pytorch.org/models/mobilenet_v2-7ebf99e0.pth",
+    "cache_path": "/root/.cache/torch/hub/checkpoints/mobilenet_v2-7ebf99e0.pth",
+    "already_cached": false,
+    "sha256": "7ebf99e03e254b273379b23edca7ec0da9f48273b23a332b93c1c99d49e86e8f"
+  },
+  "preprocessing": {
+    "base": "unchanged RGB / bilinear longest-side-224 / grey centre-pad /255",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "normalisation_applications": 1,
+    "adaptation": "Keep reference geometry; do not use official resize232/centre-crop224 preset"
+  },
+  "training_augmentation": "Compose(\n    RandomHorizontalFlip(p=0.5)\n    ColorJitter(brightness=(0.9, 1.1), contrast=(0.9, 1.1), saturation=None, hue=None)\n)",
+  "validation_augmentation": null,
+  "trainability_policy": "Only classifier trains; features and all BatchNorm statistics stay frozen/eval",
+  "class_mapping": {
+    "class_to_index": {
+      "CatEye": 0,
+      "CatFace": 1,
+      "CatMouth": 2,
+      "CatNose": 3,
+      "DogEye": 4,
+      "DogFace": 5,
+      "DogMouth": 6,
+      "DogNose": 7
+    },
+    "index_to_class": {
+      "0": "CatEye",
+      "1": "CatFace",
+      "2": "CatMouth",
+      "3": "CatNose",
+      "4": "DogEye",
+      "5": "DogFace",
+      "6": "DogMouth",
+      "7": "DogNose"
+    }
+  },
+  "counts": {
+    "train": 50927,
+    "validation": 12733
+  },
+  "training_image_directory": "/kaggle/working/enge707_train_cache",
+  "split_sha256": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+  "input_sha256": {
+    "data/processed/class_mapping.json": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "preprocessing_fingerprints.json": "2f48903cdc884d27bd536f07751a2ce48e18b0e4f3c8b989d50459a9448b553a",
+    "src/__init__.py": "020dcda972efec823b23ed96a13c78b70ecd61dc7ae3709390119ee9f2af8963",
+    "src/data_pipeline.py": "7551eb3cc71ef4a159ac8543b654f2edfb1d0733177509617ebd1365b409e73a",
+    "src/models.py": "059948071eee111deb31e61899884590347f94669c0ca95a638827f2f05b4c48",
+    "transfer_manifest.json": "14b63f88302e255b3f2acca0a34377ee35e5dc5fddada8136651d236d36fc8b8",
+    "setup_report": "3f24fed8b7c8c6166f0bce96a9019fc8144fa50b50b8eaa1d533677a099300a1",
+    "cache_report": "16785369c12668dc68952608a587a5c7beb1f8ea5cac86bd0f7ea0b317bb7232"
+  },
+  "diagnostic_sha256": "7083eefa98a4a29ec6e55c5d73787e3fb1101fc8cd79eeb5a0a770e020a939da",
+  "runtime": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "pandas": "2.3.3",
+    "numpy": "2.1.3",
+    "Pillow": "12.3.0",
+    "cuda_build": "12.8"
+  },
+  "gpu": {
+    "selected": "cuda:0",
+    "name": "Tesla T4"
+  },
+  "reproducibility": "Fresh seeded pretrained model; no cross-version/GPU bitwise or exact-resume guarantee"
+}
