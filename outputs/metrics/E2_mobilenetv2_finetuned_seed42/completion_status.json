@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "completed_epochs": 8,
+  "failures": [],
+  "best_epoch": 8,
+  "best_validation_loss": 0.040039216507934836,
+  "elapsed_seconds": 1933.1506716059998,
+  "frozen_parameters_and_bn_buffers_unchanged": true,
+  "history_sha256": "ea2f434868afc1edc86205f41065099635924bb06cb8c52b5b26833eeeca84b4",
+  "stop_reason": "maximum epochs"
+}

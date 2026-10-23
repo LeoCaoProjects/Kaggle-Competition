@@ -1,0 +1,126 @@
+{
+  "run_name": "E2_mobilenetv2_finetuned_seed42",
+  "seed": 42,
+  "max_epochs": 8,
+  "early_stopping_patience": 3,
+  "optimizer": "Adam",
+  "initial_learning_rates": {
+    "features": 1e-05,
+    "classifier": 0.0001
+  },
+  "loss": "unweighted CrossEntropyLoss on raw logits",
+  "batch_size": 32,
+  "num_workers": 0,
+  "drop_last": false,
+  "train_shuffle": true,
+  "validation_shuffle": false,
+  "device": "cuda:0",
+  "dtype": "float32",
+  "amp": false,
+  "multi_gpu": false,
+  "scheduler": {
+    "name": "ReduceLROnPlateau",
+    "factor": 0.5,
+    "patience": 2,
+    "threshold": 0,
+    "threshold_mode": "abs"
+  },
+  "selected_modules": [
+    "network.features.16",
+    "network.features.17",
+    "network.features.18"
+  ],
+  "parameters": {
+    "total": 2234120,
+    "trainable": 1205128
+  },
+  "trainability_policy": "Final three feature modules' non-BatchNorm parameters and classifier train; all BN parameters and buffers frozen",
+  "architecture": "FrozenMobileNetV2; Dropout(0.3), Linear(last_channel,8), raw logits",
+  "class_mapping": {
+    "class_to_index": {
+      "CatEye": 0,
+      "CatFace": 1,
+      "CatMouth": 2,
+      "CatNose": 3,
+      "DogEye": 4,
+      "DogFace": 5,
+      "DogMouth": 6,
+      "DogNose": 7
+    },
+    "index_to_class": {
+      "0": "CatEye",
+      "1": "CatFace",
+      "2": "CatMouth",
+      "3": "CatNose",
+      "4": "DogEye",
+      "5": "DogFace",
+      "6": "DogMouth",
+      "7": "DogNose"
+    }
+  },
+  "counts": {
+    "train": 50927,
+    "validation": 12733
+  },
+  "preprocessing": {
+    "base": "unchanged RGB / bilinear longest-side-224 / grey centre-pad /255",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "normalisation_applications": 1,
+    "adaptation": "Keep reference geometry; do not use official resize232/centre-crop224 preset"
+  },
+  "training_augmentation": "Compose(\n    RandomHorizontalFlip(p=0.5)\n    ColorJitter(brightness=(0.9, 1.1), contrast=(0.9, 1.1), saturation=None, hue=None)\n)",
+  "validation_augmentation": null,
+  "training_image_directory": "/kaggle/working/enge707_train_cache",
+  "input_sha256": {
+    "data/processed/class_mapping.json": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "src/models.py": "059948071eee111deb31e61899884590347f94669c0ca95a638827f2f05b4c48",
+    "src/data_pipeline.py": "7551eb3cc71ef4a159ac8543b654f2edfb1d0733177509617ebd1365b409e73a",
+    "preprocessing_fingerprints.json": "2f48903cdc884d27bd536f07751a2ce48e18b0e4f3c8b989d50459a9448b553a",
+    "src/__init__.py": "020dcda972efec823b23ed96a13c78b70ecd61dc7ae3709390119ee9f2af8963",
+    "transfer_manifest": "14b63f88302e255b3f2acca0a34377ee35e5dc5fddada8136651d236d36fc8b8",
+    "e1_checkpoint": "4043403fda03a02184038e817395f8001744b8542f99993383e046175b90b968",
+    "cache_report": "16785369c12668dc68952608a587a5c7beb1f8ea5cac86bd0f7ea0b317bb7232"
+  },
+  "split_sha256": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+  "e1_checkpoint": {
+    "path": "/kaggle/input/datasets/leocaoprojects/e1-mobile/E1_mobilenetv2_frozen_seed42.pt",
+    "sha256": "4043403fda03a02184038e817395f8001744b8542f99993383e046175b90b968",
+    "best_epoch": 10,
+    "best_validation_loss": 0.1460895589143588,
+    "original_weights": {
+      "identifier": "MobileNet_V2_Weights.IMAGENET1K_V2",
+      "url": "https://download.pytorch.org/models/mobilenet_v2-7ebf99e0.pth",
+      "cache_path": "/root/.cache/torch/hub/checkpoints/mobilenet_v2-7ebf99e0.pth",
+      "already_cached": false,
+      "sha256": "7ebf99e03e254b273379b23edca7ec0da9f48273b23a332b93c1c99d49e86e8f"
+    }
+  },
+  "diagnostic_sha256": "b6073a7b71209c8aff4aaf2f774b1aacba34a0f02bf1ec4b860d0cd0957fd8b9",
+  "runtime": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "Pillow": "12.3.0",
+    "cuda_build": "12.8"
+  },
+  "gpu": {
+    "selected": "cuda:0",
+    "name": "Tesla T4",
+    "free_bytes": 15526068224,
+    "cpu_threads": 2
+  },
+  "best_checkpoint_rule": "lowest validation loss",
+  "exact_resume_supported": false
+}

@@ -181,3 +181,20 @@ to compare saved E0/E1 per-class F1 and inspect 12 reproducibly selected E1
 validation errors. It uses saved predictions without model inference and writes
 `outputs/figures/E1_validation_error_gallery.png` and
 `outputs/metrics/E1_error_analysis_check.json`.
+
+## Saved E2 experiment
+
+`E2_mobilenetv2_finetuned_seed42` completed eight epochs of partial fine-tuning
+from the saved E1 checkpoint. Epoch 8 had the lowest recorded validation loss
+(0.040039216507934836), with validation accuracy 0.9862561847168774.
+The original exported bytes are preserved in:
+
+- `outputs/metrics/E2_mobilenetv2_finetuned_seed42/configuration.json`
+- `outputs/metrics/E2_mobilenetv2_finetuned_seed42/history.csv`
+- `outputs/metrics/E2_mobilenetv2_finetuned_seed42/completion_status.json`
+- `outputs/models/E2_mobilenetv2_finetuned_seed42.pt`
+- `outputs/figures/E2_mobilenetv2_loss_accuracy_curves.png`
+
+The hosted `mobilenetv2_finetuning_setup_check.json` has not yet been downloaded
+and preserved. E2 Kaggle submission and independent full validation evaluation
+remain pending.
