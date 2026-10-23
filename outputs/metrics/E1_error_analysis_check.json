@@ -1,0 +1,557 @@
+{
+  "status": "passed",
+  "analysis_only": true,
+  "model_loaded_or_run": false,
+  "validation_samples": 12733,
+  "correct": 12107,
+  "errors": 626,
+  "error_rate": 0.04916359066991283,
+  "class_order": [
+    "CatEye",
+    "CatFace",
+    "CatMouth",
+    "CatNose",
+    "DogEye",
+    "DogFace",
+    "DogMouth",
+    "DogNose"
+  ],
+  "confusion_matrix": [
+    [
+      2677,
+      0,
+      4,
+      40,
+      47,
+      0,
+      0,
+      11
+    ],
+    [
+      0,
+      1379,
+      7,
+      2,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      11,
+      1,
+      1325,
+      38,
+      6,
+      0,
+      7,
+      0
+    ],
+    [
+      30,
+      0,
+      30,
+      1292,
+      22,
+      0,
+      0,
+      14
+    ],
+    [
+      40,
+      1,
+      3,
+      23,
+      2195,
+      7,
+      6,
+      40
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      8,
+      1131,
+      15,
+      4
+    ],
+    [
+      1,
+      0,
+      7,
+      1,
+      15,
+      10,
+      1078,
+      46
+    ],
+    [
+      4,
+      0,
+      1,
+      23,
+      65,
+      0,
+      35,
+      1030
+    ]
+  ],
+  "confusion_pairs": [
+    {
+      "true_class": "DogNose",
+      "predicted_class": "DogEye",
+      "count": 65
+    },
+    {
+      "true_class": "CatEye",
+      "predicted_class": "DogEye",
+      "count": 47
+    },
+    {
+      "true_class": "DogMouth",
+      "predicted_class": "DogNose",
+      "count": 46
+    },
+    {
+      "true_class": "CatEye",
+      "predicted_class": "CatNose",
+      "count": 40
+    },
+    {
+      "true_class": "DogEye",
+      "predicted_class": "CatEye",
+      "count": 40
+    },
+    {
+      "true_class": "DogEye",
+      "predicted_class": "DogNose",
+      "count": 40
+    },
+    {
+      "true_class": "CatMouth",
+      "predicted_class": "CatNose",
+      "count": 38
+    },
+    {
+      "true_class": "DogNose",
+      "predicted_class": "DogMouth",
+      "count": 35
+    },
+    {
+      "true_class": "CatNose",
+      "predicted_class": "CatEye",
+      "count": 30
+    },
+    {
+      "true_class": "CatNose",
+      "predicted_class": "CatMouth",
+      "count": 30
+    },
+    {
+      "true_class": "DogEye",
+      "predicted_class": "CatNose",
+      "count": 23
+    },
+    {
+      "true_class": "DogNose",
+      "predicted_class": "CatNose",
+      "count": 23
+    },
+    {
+      "true_class": "CatNose",
+      "predicted_class": "DogEye",
+      "count": 22
+    },
+    {
+      "true_class": "DogFace",
+      "predicted_class": "DogMouth",
+      "count": 15
+    },
+    {
+      "true_class": "DogMouth",
+      "predicted_class": "DogEye",
+      "count": 15
+    },
+    {
+      "true_class": "CatNose",
+      "predicted_class": "DogNose",
+      "count": 14
+    },
+    {
+      "true_class": "CatEye",
+      "predicted_class": "DogNose",
+      "count": 11
+    },
+    {
+      "true_class": "CatMouth",
+      "predicted_class": "CatEye",
+      "count": 11
+    },
+    {
+      "true_class": "DogMouth",
+      "predicted_class": "DogFace",
+      "count": 10
+    },
+    {
+      "true_class": "DogFace",
+      "predicted_class": "DogEye",
+      "count": 8
+    },
+    {
+      "true_class": "CatFace",
+      "predicted_class": "CatMouth",
+      "count": 7
+    },
+    {
+      "true_class": "CatMouth",
+      "predicted_class": "DogMouth",
+      "count": 7
+    },
+    {
+      "true_class": "DogEye",
+      "predicted_class": "DogFace",
+      "count": 7
+    },
+    {
+      "true_class": "DogMouth",
+      "predicted_class": "CatMouth",
+      "count": 7
+    },
+    {
+      "true_class": "CatMouth",
+      "predicted_class": "DogEye",
+      "count": 6
+    },
+    {
+      "true_class": "DogEye",
+      "predicted_class": "DogMouth",
+      "count": 6
+    },
+    {
+      "true_class": "CatEye",
+      "predicted_class": "CatMouth",
+      "count": 4
+    },
+    {
+      "true_class": "DogFace",
+      "predicted_class": "DogNose",
+      "count": 4
+    },
+    {
+      "true_class": "DogNose",
+      "predicted_class": "CatEye",
+      "count": 4
+    },
+    {
+      "true_class": "DogEye",
+      "predicted_class": "CatMouth",
+      "count": 3
+    },
+    {
+      "true_class": "CatFace",
+      "predicted_class": "CatNose",
+      "count": 2
+    },
+    {
+      "true_class": "CatFace",
+      "predicted_class": "DogEye",
+      "count": 1
+    },
+    {
+      "true_class": "CatMouth",
+      "predicted_class": "CatFace",
+      "count": 1
+    },
+    {
+      "true_class": "DogEye",
+      "predicted_class": "CatFace",
+      "count": 1
+    },
+    {
+      "true_class": "DogMouth",
+      "predicted_class": "CatEye",
+      "count": 1
+    },
+    {
+      "true_class": "DogMouth",
+      "predicted_class": "CatNose",
+      "count": 1
+    },
+    {
+      "true_class": "DogNose",
+      "predicted_class": "CatMouth",
+      "count": 1
+    }
+  ],
+  "per_class_f1_comparison": [
+    {
+      "class": "CatEye",
+      "E0_F1": 0.8557856735702071,
+      "E1_F1": 0.9660772284373872,
+      "F1_change": 0.11029155486718012
+    },
+    {
+      "class": "CatFace",
+      "E0_F1": 0.9406593406593406,
+      "E1_F1": 0.9956678700361011,
+      "F1_change": 0.055008529376760484
+    },
+    {
+      "class": "CatMouth",
+      "E0_F1": 0.9631988676574664,
+      "E1_F1": 0.9584086799276673,
+      "F1_change": -0.004790187729799111
+    },
+    {
+      "class": "CatNose",
+      "E0_F1": 0.7914478619654913,
+      "E1_F1": 0.9205557534734592,
+      "F1_change": 0.12910789150796786
+    },
+    {
+      "class": "DogEye",
+      "E0_F1": 0.7441077441077442,
+      "E1_F1": 0.9392383397518186,
+      "F1_change": 0.19513059564407442
+    },
+    {
+      "class": "DogFace",
+      "E0_F1": 0.8124721603563474,
+      "E1_F1": 0.9809193408499567,
+      "F1_change": 0.1684471804936093
+    },
+    {
+      "class": "DogMouth",
+      "E0_F1": 0.9713062098501071,
+      "E1_F1": 0.937799043062201,
+      "F1_change": -0.033507166787906106
+    },
+    {
+      "class": "DogNose",
+      "E0_F1": 0.6627737226277373,
+      "E1_F1": 0.8944854537559704,
+      "F1_change": 0.23171173112823318
+    }
+  ],
+  "seed": 42,
+  "random_generator": "Python random.Random",
+  "selection_rule": "Top three pairs by descending count, true/predicted class tie-break; sort IDs before sampling three per pair without replacement; then sort pooled remaining-pair IDs and sample three with the same RNG. Gallery columns are selection groups.",
+  "selected_ids": [
+    "08853",
+    "00926",
+    "25209",
+    "32671",
+    "25103",
+    "15366",
+    "13247",
+    "61689",
+    "50978",
+    "04830",
+    "40899",
+    "29367"
+  ],
+  "selected_images": [
+    {
+      "image_id": "08853",
+      "true_class": "DogNose",
+      "predicted_class": "DogEye",
+      "max_softmax_confidence": 0.49303779006004333,
+      "width": 32,
+      "height": 32,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/08853.jpg",
+      "byte_sha256": "7a921353cedc245477565cd6003b9dd20900d6d71120748ae1ed9a7e10bac35c",
+      "selection_group": "DogNose -> DogEye"
+    },
+    {
+      "image_id": "00926",
+      "true_class": "DogNose",
+      "predicted_class": "DogEye",
+      "max_softmax_confidence": 0.9658232927322388,
+      "width": 54,
+      "height": 54,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/00926.jpg",
+      "byte_sha256": "b8cff7928c39c23cfbf77204abcd0bb6e1c8812c617e0752bdb8d36d80fd0732",
+      "selection_group": "DogNose -> DogEye"
+    },
+    {
+      "image_id": "25209",
+      "true_class": "DogNose",
+      "predicted_class": "DogEye",
+      "max_softmax_confidence": 0.5353888273239136,
+      "width": 40,
+      "height": 40,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/25209.jpg",
+      "byte_sha256": "2ea558dee29bcd19f8987c2c9a61c23f0d63b084161b74f4e3070bbb6ceb8fec",
+      "selection_group": "DogNose -> DogEye"
+    },
+    {
+      "image_id": "32671",
+      "true_class": "CatEye",
+      "predicted_class": "DogEye",
+      "max_softmax_confidence": 0.9259116053581238,
+      "width": 46,
+      "height": 46,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/32671.jpg",
+      "byte_sha256": "9bda2d21f0cc057eb4f366cf73e18d5038bb86e3daad0b97eacc44ea51156916",
+      "selection_group": "CatEye -> DogEye"
+    },
+    {
+      "image_id": "25103",
+      "true_class": "CatEye",
+      "predicted_class": "DogEye",
+      "max_softmax_confidence": 0.6647419929504395,
+      "width": 28,
+      "height": 28,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/25103.jpg",
+      "byte_sha256": "8080db8306fb8a89b5ff26479d9ffd8d958d0ba2af9a8503dbc5948b3c19c60a",
+      "selection_group": "CatEye -> DogEye"
+    },
+    {
+      "image_id": "15366",
+      "true_class": "CatEye",
+      "predicted_class": "DogEye",
+      "max_softmax_confidence": 0.5276873707771301,
+      "width": 32,
+      "height": 32,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/15366.jpg",
+      "byte_sha256": "b3a619b16413031b7ac4d45d4e3a284235a175ada184cce4493a330d96622784",
+      "selection_group": "CatEye -> DogEye"
+    },
+    {
+      "image_id": "13247",
+      "true_class": "DogMouth",
+      "predicted_class": "DogNose",
+      "max_softmax_confidence": 0.4167476296424866,
+      "width": 50,
+      "height": 37,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/13247.jpg",
+      "byte_sha256": "004a1d38bbf5764947bce672f8cb22ca399ad42bb076cb709ef71cb011682b46",
+      "selection_group": "DogMouth -> DogNose"
+    },
+    {
+      "image_id": "61689",
+      "true_class": "DogMouth",
+      "predicted_class": "DogNose",
+      "max_softmax_confidence": 0.6198814511299133,
+      "width": 40,
+      "height": 30,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/61689.jpg",
+      "byte_sha256": "bd525a2381edab55ada23a8e3f2980c20519a21c655a7ee1293a32dfcf4e037e",
+      "selection_group": "DogMouth -> DogNose"
+    },
+    {
+      "image_id": "50978",
+      "true_class": "DogMouth",
+      "predicted_class": "DogNose",
+      "max_softmax_confidence": 0.4112221300601959,
+      "width": 102,
+      "height": 75,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/50978.jpg",
+      "byte_sha256": "bd005fdf068e81d902f2101f66ea1bf38c8054d57516c1bec0331d17df4871f8",
+      "selection_group": "DogMouth -> DogNose"
+    },
+    {
+      "image_id": "04830",
+      "true_class": "DogEye",
+      "predicted_class": "DogNose",
+      "max_softmax_confidence": 0.5569103956222534,
+      "width": 36,
+      "height": 36,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/04830.jpg",
+      "byte_sha256": "05dabe0ad49b2ad52e6b5cc72e52a18660595f9da7dc7c6d15d6207a6842c010",
+      "selection_group": "Other confusion pairs"
+    },
+    {
+      "image_id": "40899",
+      "true_class": "CatNose",
+      "predicted_class": "DogNose",
+      "max_softmax_confidence": 0.4968802034854889,
+      "width": 72,
+      "height": 72,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/40899.jpg",
+      "byte_sha256": "b5fdff28c86e0a6e2f19fbf2b4ef8b35b11203afdc00a31a6c4c81abc5b0e80c",
+      "selection_group": "Other confusion pairs"
+    },
+    {
+      "image_id": "29367",
+      "true_class": "CatNose",
+      "predicted_class": "CatEye",
+      "max_softmax_confidence": 0.6863524317741394,
+      "width": 86,
+      "height": 86,
+      "mode": "RGB",
+      "image_path": "data/raw/train/train/29367.jpg",
+      "byte_sha256": "66873cb0f7c4785ec708f9bf042b48b9d103db4c990a253e4701e0d517957418",
+      "selection_group": "Other confusion pairs"
+    }
+  ],
+  "input_sha256": {
+    "split": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "mapping": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "E0/validation_predictions.csv": "969c0dd349638e82d67ee57259c8e14609bb35cd0a0be96613deae375ff4db5f",
+    "E0/validation_metrics.json": "bfa7c6ea66ac22830cb096f08f87a4ff49fc84e2d8e27a9a988fbf7255bea467",
+    "E0/classification_report.csv": "657c2c00d350b236119ca44977170b2ae0bc477f0ff7b55f22cb21c658bf634b",
+    "E1/validation_predictions.csv": "a78525db9c0b87066070d6c1ae24b82c70ac0600094648702d224476a5c8bf66",
+    "E1/validation_metrics.json": "3a16af2a872ee96dd41598920c2f286f24713fba6ea4aefdd8b00abbc50ead04",
+    "E1/classification_report.csv": "b8da1faba2b94d01bc046d8d041dfc6dced7f728106bba3f2609333647581f8e"
+  },
+  "figure_path": "outputs/figures/E1_validation_error_gallery.png",
+  "figure_sha256": "6c2835aa304e4c7c9d348ebe492e0ec3b6549018dba50e7dd1dcaa2e69fbc233",
+  "checks": {
+    "root_and_notebooks_path_resolution": true,
+    "existing_project_venv": true,
+    "strict_image_decoding": true,
+    "validation_unique_12733_ids": true,
+    "class_mapping_round_trip": true,
+    "E0_saved_checks_passed": true,
+    "E0_mapping_and_split_hash": true,
+    "E0_ids_order_and_true_labels": true,
+    "E0_classes_and_confidences": true,
+    "E0_recomputed_reports_match": true,
+    "E1_saved_checks_passed": true,
+    "E1_mapping_and_split_hash": true,
+    "E1_ids_order_and_true_labels": true,
+    "E1_classes_and_confidences": true,
+    "E1_recomputed_reports_match": true,
+    "six_classes_improved_two_mouth_classes_declined": true,
+    "626_errors_and_expected_top_pairs": true,
+    "deterministic_selection": true,
+    "twelve_unique_validation_errors": true,
+    "selected_08853_validation_error": true,
+    "selected_00926_validation_error": true,
+    "selected_25209_validation_error": true,
+    "selected_32671_validation_error": true,
+    "selected_25103_validation_error": true,
+    "selected_15366_validation_error": true,
+    "selected_13247_validation_error": true,
+    "selected_61689_validation_error": true,
+    "selected_50978_validation_error": true,
+    "selected_04830_validation_error": true,
+    "selected_40899_validation_error": true,
+    "selected_29367_validation_error": true,
+    "twelve_images_decoded": true,
+    "saved_gallery_exists": true,
+    "existing_evaluation_and_metadata_unchanged": true,
+    "selected_raw_images_unchanged": true
+  },
+  "failed_checks": [],
+  "warnings": [],
+  "limitations": [
+    "Deliberately selected gallery is not an estimate of error frequencies.",
+    "Maximum softmax confidence is not calibrated certainty.",
+    "No visual causes or label errors are inferred; unknown related crops may remain."
+  ]
+}

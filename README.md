@@ -175,3 +175,9 @@ The first submission and its verification record are preserved in
 `outputs/submissions/submission_E1.csv` and
 `outputs/metrics/submission_E1_check.json`.
 User-confirmed first Kaggle score: **0.9218**.
+
+Run `notebooks/09_Error_Analysis.ipynb` locally with the existing project kernel
+to compare saved E0/E1 per-class F1 and inspect 12 reproducibly selected E1
+validation errors. It uses saved predictions without model inference and writes
+`outputs/figures/E1_validation_error_gallery.png` and
+`outputs/metrics/E1_error_analysis_check.json`.
