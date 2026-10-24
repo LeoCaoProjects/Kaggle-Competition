@@ -1,0 +1,105 @@
+{
+  "status": "passed",
+  "diagnostic_only": true,
+  "checks": {
+    "two_fixed_validation_batches_match_original_e1": true,
+    "finite_loss_and_gradients": true,
+    "selected_feature_layers_updated": true,
+    "classifier_updated": true,
+    "frozen_parameters_and_all_buffers_unchanged": true,
+    "train_modes_and_bn_policy": true,
+    "original_inputs_unchanged": true
+  },
+  "failures": [],
+  "runtime": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "Pillow": "12.3.0",
+    "cuda_build": "12.8"
+  },
+  "input_sha256": {
+    "data/processed/class_mapping.json": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "src/models.py": "059948071eee111deb31e61899884590347f94669c0ca95a638827f2f05b4c48",
+    "src/data_pipeline.py": "7551eb3cc71ef4a159ac8543b654f2edfb1d0733177509617ebd1365b409e73a",
+    "preprocessing_fingerprints.json": "2f48903cdc884d27bd536f07751a2ce48e18b0e4f3c8b989d50459a9448b553a",
+    "src/__init__.py": "020dcda972efec823b23ed96a13c78b70ecd61dc7ae3709390119ee9f2af8963",
+    "transfer_manifest": "14b63f88302e255b3f2acca0a34377ee35e5dc5fddada8136651d236d36fc8b8",
+    "e1_checkpoint": "4043403fda03a02184038e817395f8001744b8542f99993383e046175b90b968",
+    "cache_report": "16785369c12668dc68952608a587a5c7beb1f8ea5cac86bd0f7ea0b317bb7232"
+  },
+  "configuration": {
+    "seed": 42,
+    "batch_size": 32,
+    "num_workers": 0,
+    "drop_last": false,
+    "device": "cuda:0",
+    "dtype": "float32",
+    "amp": false,
+    "feature_lr": 1e-05,
+    "classifier_lr": 0.0001
+  },
+  "batch_seconds": {
+    "warmup": [
+      0.6328684249999696,
+      0.15839149500004623
+    ],
+    "training": [
+      0.1726303340000186,
+      0.12807455199993,
+      0.14415656099993157
+    ],
+    "validation": [
+      0.1010443940000414,
+      0.10391143200001807
+    ]
+  },
+  "comparison_atol": 1e-06,
+  "comparison_rtol": 1e-05,
+  "comparison_max_abs_differences": [
+    0.0,
+    0.0
+  ],
+  "limitations": [
+    "Rough epoch projection is a short-sample estimate, not a measured epoch.",
+    "Timing includes loading, transfer, verification and cache effects.",
+    "No GPU/cross-version bitwise reproducibility or exact-resume guarantee."
+  ],
+  "device": {
+    "selected": "cuda:0",
+    "name": "Tesla T4",
+    "free_bytes": 15526068224,
+    "cpu_threads": 2
+  },
+  "selected_modules": [
+    "network.features.16",
+    "network.features.17",
+    "network.features.18"
+  ],
+  "parameters": {
+    "total": 2234120,
+    "trainable": 1205128
+  },
+  "completed_batches": {
+    "warmup": 2,
+    "training": 3,
+    "validation": 2
+  },
+  "mean_batch_seconds": {
+    "warmup": 0.39562996000000794,
+    "training": 0.14828714899996007,
+    "validation": 0.10247791300002973
+  },
+  "loader_batch_counts": {
+    "train": 1592,
+    "validation": 398
+  },
+  "rough_epoch_estimate_seconds": 276.85935058194826,
+  "peak_gpu_allocated_bytes": 416788480,
+  "peak_gpu_reserved_bytes": 528482304,
+  "timing_phase_seconds": 1.5419779310000195,
+  "diagnostic_model_and_optimizer_discarded": true
+}

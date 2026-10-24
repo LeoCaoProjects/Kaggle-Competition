@@ -1,0 +1,365 @@
+{
+  "status": "passed",
+  "evaluation_only": true,
+  "run_name": "E2_mobilenetv2_finetuned_seed42",
+  "best_epoch": 8,
+  "samples": 12733,
+  "cross_entropy": 0.040039216507934836,
+  "accuracy": 0.9862561847168774,
+  "macro_f1": 0.9873287581357201,
+  "weighted_f1": 0.9862631262638263,
+  "device": "cuda:0",
+  "gpu": "Tesla T4",
+  "dtype": "float32",
+  "amp": false,
+  "batch_size": 32,
+  "num_workers": 0,
+  "drop_last": false,
+  "shuffle": false,
+  "augmentation": false,
+  "parameters": {
+    "total": 2234120,
+    "trainable": 1205128
+  },
+  "e1_checkpoint_provenance": {
+    "path": "/kaggle/input/datasets/leocaoprojects/e1-mobile/E1_mobilenetv2_frozen_seed42.pt",
+    "sha256": "4043403fda03a02184038e817395f8001744b8542f99993383e046175b90b968",
+    "best_epoch": 10,
+    "best_validation_loss": 0.1460895589143588,
+    "original_weights": {
+      "identifier": "MobileNet_V2_Weights.IMAGENET1K_V2",
+      "url": "https://download.pytorch.org/models/mobilenet_v2-7ebf99e0.pth",
+      "cache_path": "/root/.cache/torch/hub/checkpoints/mobilenet_v2-7ebf99e0.pth",
+      "already_cached": false,
+      "sha256": "7ebf99e03e254b273379b23edca7ec0da9f48273b23a332b93c1c99d49e86e8f"
+    }
+  },
+  "preprocessing": {
+    "base": "unchanged RGB / bilinear longest-side-224 / grey centre-pad /255",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "normalisation_applications": 1,
+    "adaptation": "Keep reference geometry; do not use official resize232/centre-crop224 preset"
+  },
+  "class_mapping": {
+    "class_to_index": {
+      "CatEye": 0,
+      "CatFace": 1,
+      "CatMouth": 2,
+      "CatNose": 3,
+      "DogEye": 4,
+      "DogFace": 5,
+      "DogMouth": 6,
+      "DogNose": 7
+    },
+    "index_to_class": {
+      "0": "CatEye",
+      "1": "CatFace",
+      "2": "CatMouth",
+      "3": "CatNose",
+      "4": "DogEye",
+      "5": "DogFace",
+      "6": "DogMouth",
+      "7": "DogNose"
+    }
+  },
+  "per_class": [
+    {
+      "class_index": 0,
+      "class": "CatEye",
+      "precision": 0.9894583787713559,
+      "recall": 0.9794890248290752,
+      "f1": 0.9844484629294756,
+      "support": 2779
+    },
+    {
+      "class_index": 1,
+      "class": "CatFace",
+      "precision": 0.9992774566473989,
+      "recall": 0.9956803455723542,
+      "f1": 0.997475658131987,
+      "support": 1389
+    },
+    {
+      "class_index": 2,
+      "class": "CatMouth",
+      "precision": 0.9928212491026561,
+      "recall": 0.9963976945244957,
+      "f1": 0.9946062567421791,
+      "support": 1388
+    },
+    {
+      "class_index": 3,
+      "class": "CatNose",
+      "precision": 0.9768953068592058,
+      "recall": 0.9747838616714697,
+      "f1": 0.9758384421204471,
+      "support": 1388
+    },
+    {
+      "class_index": 4,
+      "class": "DogEye",
+      "precision": 0.9763440860215054,
+      "recall": 0.980561555075594,
+      "f1": 0.978448275862069,
+      "support": 2315
+    },
+    {
+      "class_index": 5,
+      "class": "DogFace",
+      "precision": 0.995697074010327,
+      "recall": 0.9991364421416234,
+      "f1": 0.9974137931034482,
+      "support": 1158
+    },
+    {
+      "class_index": 6,
+      "class": "DogMouth",
+      "precision": 0.9965457685664939,
+      "recall": 0.9965457685664939,
+      "f1": 0.9965457685664939,
+      "support": 1158
+    },
+    {
+      "class_index": 7,
+      "class": "DogNose",
+      "precision": 0.9668085106382979,
+      "recall": 0.9810017271157168,
+      "f1": 0.9738534076296613,
+      "support": 1158
+    }
+  ],
+  "confusion_matrix": [
+    [
+      2722,
+      0,
+      1,
+      17,
+      32,
+      0,
+      0,
+      7
+    ],
+    [
+      0,
+      1383,
+      5,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1383,
+      1,
+      0,
+      0,
+      4,
+      0
+    ],
+    [
+      15,
+      0,
+      2,
+      1353,
+      9,
+      0,
+      0,
+      9
+    ],
+    [
+      14,
+      1,
+      0,
+      7,
+      2270,
+      2,
+      0,
+      21
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1157,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      1154,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      6,
+      13,
+      3,
+      0,
+      1136
+    ]
+  ],
+  "row_normalised_confusion_matrix": [
+    [
+      0.9794890248290752,
+      0.0,
+      0.0003598416696653472,
+      0.0061173083843109035,
+      0.011514933429291111,
+      0.0,
+      0.0,
+      0.0025188916876574307
+    ],
+    [
+      0.0,
+      0.9956803455723542,
+      0.003599712023038157,
+      0.0007199424046076314,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.9963976945244957,
+      0.0007204610951008645,
+      0.0,
+      0.0,
+      0.002881844380403458,
+      0.0
+    ],
+    [
+      0.010806916426512969,
+      0.0,
+      0.001440922190201729,
+      0.9747838616714697,
+      0.006484149855907781,
+      0.0,
+      0.0,
+      0.006484149855907781
+    ],
+    [
+      0.006047516198704104,
+      0.00043196544276457883,
+      0.0,
+      0.003023758099352052,
+      0.980561555075594,
+      0.0008639308855291577,
+      0.0,
+      0.009071274298056155
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0008635578583765112,
+      0.9991364421416234,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0017271157167530224,
+      0.0,
+      0.0,
+      0.0,
+      0.9965457685664939,
+      0.0017271157167530224
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0051813471502590676,
+      0.011226252158894647,
+      0.0025906735751295338,
+      0.0,
+      0.9810017271157168
+    ]
+  ],
+  "input_sha256": {
+    "checkpoint": "89718e38fc47bff1fa31ed923ebab9a5a2aefe7fdea27fe73334cb366443d688",
+    "configuration": "98c31a5c619f3c9a44731cf96bb43ea75955c071f48345b54a862658cbaf2c90",
+    "history": "ea2f434868afc1edc86205f41065099635924bb06cb8c52b5b26833eeeca84b4",
+    "completion_status": "259d532af3b421ea6a2ef4b150016b909c122c8e52c5ba42b4d1b0ab87e1d24b",
+    "transfer_manifest": "14b63f88302e255b3f2acca0a34377ee35e5dc5fddada8136651d236d36fc8b8",
+    "cache_report": "16785369c12668dc68952608a587a5c7beb1f8ea5cac86bd0f7ea0b317bb7232",
+    "preprocessing_fingerprints.json": "2f48903cdc884d27bd536f07751a2ce48e18b0e4f3c8b989d50459a9448b553a",
+    "src/models.py": "059948071eee111deb31e61899884590347f94669c0ca95a638827f2f05b4c48",
+    "data/processed/class_mapping.json": "672eec7a50d06abbc2e47c02398b616b5942ff52bd93b8d5db37a63c8ec5b6e5",
+    "data/processed/split_manifest.csv": "2adc484771456180e5c63d59ecb500314927549f4bd63780dab09bc27dab54d9",
+    "src/__init__.py": "020dcda972efec823b23ed96a13c78b70ecd61dc7ae3709390119ee9f2af8963",
+    "src/data_pipeline.py": "7551eb3cc71ef4a159ac8543b654f2edfb1d0733177509617ebd1365b409e73a"
+  },
+  "checks": {
+    "exact_unique_id_coverage_and_order": true,
+    "true_labels_match": true,
+    "class_supports_match": true,
+    "prediction_indices_in_range": true,
+    "finite_metrics_and_confidences": true,
+    "confidence_in_range": true,
+    "confusion_total_12733": true,
+    "confusion_supports_match": true,
+    "normalised_rows_sum_to_one": true,
+    "eval_no_gradients": true,
+    "batchnorm_buffers_unchanged": true,
+    "original_inputs_unchanged": true
+  },
+  "failed_checks": [],
+  "history_comparison": {
+    "epoch": 8,
+    "history_accuracy": 0.9862561847168774,
+    "history_loss": 0.040039216507934836,
+    "accuracy_difference": 0.0,
+    "loss_difference": 0.0,
+    "accuracy_absolute_tolerance": 1e-12,
+    "loss_absolute_tolerance": 1e-06,
+    "relative_tolerance": 0,
+    "accuracy_matches_within_tolerance": true,
+    "loss_matches_within_tolerance": true
+  },
+  "warnings": [],
+  "outputs": [
+    "/kaggle/working/E2_mobilenetv2_finetuned_seed42/evaluation/validation_metrics.json",
+    "/kaggle/working/E2_mobilenetv2_finetuned_seed42/evaluation/classification_report.csv",
+    "/kaggle/working/E2_mobilenetv2_finetuned_seed42/evaluation/validation_predictions.csv",
+    "/kaggle/working/E2_mobilenetv2_finetuned_seed42/evaluation/confusion_matrix.png"
+  ],
+  "runtime": {
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "torchvision": "0.26.0+cu128",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3",
+    "Pillow": "12.3.0",
+    "cuda_build": "12.8"
+  },
+  "limitations": [
+    "No cross-version/GPU bitwise reproducibility claim.",
+    "Undefined precision/F1 uses zero_division=0; maximum softmax is not calibrated certainty."
+  ]
+}

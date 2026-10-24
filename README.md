@@ -195,6 +195,25 @@ The original exported bytes are preserved in:
 - `outputs/models/E2_mobilenetv2_finetuned_seed42.pt`
 - `outputs/figures/E2_mobilenetv2_loss_accuracy_curves.png`
 
-The hosted `mobilenetv2_finetuning_setup_check.json` has not yet been downloaded
-and preserved. E2 Kaggle submission and independent full validation evaluation
-remain pending.
+The verified hosted diagnostic and first E2 submission are preserved in:
+
+- `outputs/metrics/mobilenetv2_finetuning_setup_check.json`
+- `outputs/submissions/submission_E2.csv`
+- `outputs/metrics/submission_E2_check.json`
+
+The user reports an accepted E2 Kaggle score of **0.9397 (93.97%)**, distinct
+from the **98.63% validation accuracy**. This is user-reported, without
+independent leaderboard verification or a final-rank claim.
+
+The completed E2 evaluation of all 12,733 saved validation images is preserved in:
+
+- `outputs/metrics/E2_mobilenetv2_finetuned_seed42/validation_metrics.json`
+- `outputs/metrics/E2_mobilenetv2_finetuned_seed42/classification_report.csv`
+- `outputs/metrics/E2_mobilenetv2_finetuned_seed42/validation_predictions.csv`
+- `outputs/figures/E2_mobilenetv2_confusion_matrix.png`
+
+Local recomputation from saved predictions confirmed 12,558 correct predictions
+and 175 errors, accuracy 0.9862561847168774, macro F1 0.9873287581357201 and
+weighted F1 0.9862631262638263. Per-class metrics and confusion counts match the
+saved reports, and the confusion PNG was visually checked. Validation loss
+matches epoch-8 history exactly; it was not recomputed from predicted classes.
