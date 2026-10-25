@@ -1,6 +1,6 @@
 {
   "source_file": "src/models.py",
-  "source_sha256": "059948071eee111deb31e61899884590347f94669c0ca95a638827f2f05b4c48",
+  "source_sha256": "492635acc2174bce266fbde3148ec67104f53e3e2d7ede728ed8cfaab8f9b4ec",
   "model": "ReferenceCNN",
   "device": "cpu",
   "mode": "eval",
@@ -102,20 +102,22 @@
     "eval_cpu_without_gradients": true,
     "finite_eight_raw_scores": true,
     "all_text_inside_canvas": true,
-    "box_titles_and_shapes_do_not_overlap": true,
+    "box_titles_and_details_do_not_overlap": true,
+    "all_box_text_inside_boxes": true,
     "model_source_unchanged": true
   },
   "failed_checks": [],
   "figure": {
     "path": "outputs/figures/reference_cnn_architecture.png",
     "inches": [
-      7,
+      7.4,
       4.5
     ],
     "dpi": 300,
     "pixels": [
-      2100,
+      2220,
       1350
-    ]
+    ],
+    "sha256": "5a9ca5ee35bc99e8509e810967b0b0160fd857b68d8826f21ee6d8751212a231"
   }
 }

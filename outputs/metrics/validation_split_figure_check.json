@@ -111,6 +111,7 @@
   "saved_split_unchanged": true,
   "figure": {
     "path": "outputs/figures/validation_split_overview.png",
+    "title": "Training and Validation Split",
     "inches": [
       7,
       5
@@ -119,7 +120,7 @@
     "pixels": [
       2100,
       1500
-    ]
-  },
-  "limitation": "Unknown related crops or source animals may still overlap."
+    ],
+    "sha256": "fc217575bf5e0eab46ba8f0a61df5e0391f81bb1f7ec4ba46637182d8b737e8e"
+  }
 }

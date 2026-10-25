@@ -107,27 +107,26 @@ def main():
                                     mutation_scale=11, color=line_color, linewidth=1.1,
                                     shrinkA=0, shrinkB=0))
 
-    box(0.24, 0.825, 0.52, 0.105)
-    text(0.5, 0.8775, f"{counts['total']:,} labelled images", 13, "bold")
-    connector((0.5, 0.825), (0.5, 0.765), arrow=True)
-    box(0.075, 0.615, 0.85, 0.145)
-    text(0.5, 0.708, "Group identical decoded images before splitting", 11)
-    text(0.5, 0.658, f"{duplicate_pairs} duplicate pairs kept together", 10)
-    connector((0.5, 0.615), (0.5, 0.585))
-    text(0.5, 0.554, f"Class-stratified group split | seed {metrics['seed']}", 10.5)
-    connector((0.5, 0.525), (0.5, 0.495))
-    connector((0.2625, 0.495), (0.7375, 0.495))
+    title = "Training and Validation Split"
+    text(0.5, 0.94, title, 16, "bold")
+    box(0.24, 0.77, 0.52, 0.10)
+    text(0.5, 0.82, f"{counts['total']:,} labelled images", 13, "bold")
+    connector((0.5, 0.77), (0.5, 0.71), arrow=True)
+    box(0.15, 0.60, 0.70, 0.11)
+    text(0.5, 0.655, "Group exact duplicates\nbefore splitting", 12)
+    connector((0.5, 0.60), (0.5, 0.55))
+    connector((0.2625, 0.55), (0.7375, 0.55))
     for centre in [0.2625, 0.7375]:
-        connector((centre, 0.495), (centre, 0.44), arrow=True)
-    box(0.045, 0.335, 0.435, 0.105, "#E6EEF3", "#7C96A7")
-    box(0.52, 0.335, 0.435, 0.105, "#EDF1E8", "#909F7F")
-    text(0.2625, 0.3875, f"Training: {counts['train']:,} images (~{proportions['train']:.0%})", 10.6, "bold")
-    text(0.7375, 0.3875, f"Validation: {counts['validation']:,} images (~{proportions['validation']:.0%})", 10.6, "bold")
-    box(0.045, 0.105, 0.91, 0.165, "#F7F8F9", "#CFD5D9")
-    text(0.5, 0.232, "All labelled images retained", 10.5)
-    text(0.5, 0.187, "All 8 classes in both partitions", 10.5)
-    text(0.5, 0.14, f"Shared IDs: {overlaps['image_id']} | Shared file hashes: {overlaps['byte_sha256']} | Shared pixel hashes: {overlaps['pixel_sha256']}", 9.1)
-    text(0.5, 0.05, "Unknown related crops or source animals may still overlap.", 9)
+        connector((centre, 0.55), (centre, 0.49), arrow=True)
+    box(0.055, 0.355, 0.415, 0.135, "#E6EEF3", "#7C96A7")
+    box(0.53, 0.355, 0.415, 0.135, "#EDF1E8", "#909F7F")
+    for centre, label, partition in [(0.2625, "Training", "train"),
+                                     (0.7375, "Validation", "validation")]:
+        text(centre, 0.445, label, 13, "bold")
+        text(centre, 0.395, f"{counts[partition]:,} images ({proportions[partition]:.0%})", 12)
+    text(0.5, 0.265, "Class proportions preserved", 12)
+    text(0.5, 0.21, "Duplicate pairs kept together", 12)
+    text(0.5, 0.13, "No shared image IDs, file hashes\nor pixel hashes", 12)
 
     # Check text lies inside the canvas before export; visual QA follows execution.
     fig.canvas.draw()
@@ -156,8 +155,9 @@ def main():
         "input_file_hashes_sha256": {path.relative_to(root).as_posix(): before_hashes[name]
                                      for name, path in inputs.items()},
         "checks": checks, "failed_checks": [], "saved_split_unchanged": True,
-        "figure": {"path": figure_path.relative_to(root).as_posix(), "inches": [7, 5], "dpi": 300, "pixels": [2100, 1500]},
-        "limitation": "Unknown related crops or source animals may still overlap.",
+        "figure": {"path": figure_path.relative_to(root).as_posix(), "title": title,
+                   "inches": [7, 5], "dpi": 300, "pixels": [2100, 1500],
+                   "sha256": file_hash(figure_path)},
     }
     evidence_path.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")
     print(f"Verified {len(checks)} checks. Saved {figure_path.relative_to(root)}")

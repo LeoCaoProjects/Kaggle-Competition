@@ -88,56 +88,49 @@ def main():
     verify("finite_eight_raw_scores", list(output.shape) == [1, 8]
            and bool(torch.isfinite(output).all()))
 
-    # Two-row snake flow: left-to-right above, then right-to-left below.
-    fig = plt.figure(figsize=(7, 4.5), dpi=300, facecolor="white")
+    # Read across the convolution blocks, then follow the lower row right to left.
+    fig = plt.figure(figsize=(7.4, 4.5), dpi=300, facecolor="white")
     ax = fig.add_axes([0, 0, 1, 1])
     ax.set(xlim=(0, 1), ylim=(0, 1))
     ax.axis("off")
     ink, line = "#25323A", "#70838E"
+    box_texts = []
 
     def text(x, y, label, size=10.5, weight="normal"):
         return ax.text(x, y, label, ha="center", va="center", fontsize=size,
                        fontfamily="DejaVu Sans", color=ink, weight=weight,
-                       linespacing=1.35)
+                       linespacing=1.4)
 
-    def box(centre, bottom, width, title, shape, fill):
-        ax.add_patch(Rectangle((centre - width / 2, bottom), width, 0.20,
-                               facecolor=fill, edgecolor="#A4B3BD", linewidth=1))
-        heading = text(centre, bottom + 0.137, title, 10.5, "bold")
-        dimensions = text(centre, bottom + 0.047, shape, 11)
-        return heading, dimensions
+    def box(centre, bottom, width, height, title, body, fill, body_y):
+        patch = Rectangle((centre - width / 2, bottom), width, height,
+                          facecolor=fill, edgecolor="#A4B3BD", linewidth=1)
+        ax.add_patch(patch)
+        heading = text(centre, bottom + height - 0.065, title, 10.5, "bold")
+        detail = text(centre, body_y, body, 10.5)
+        box_texts.append((patch, heading, detail))
 
     def arrow(start, end):
         ax.add_patch(FancyArrowPatch(start, end, arrowstyle="-|>",
                                     mutation_scale=12, linewidth=1.2, color=line,
-                                    shrinkA=3, shrinkB=3))
+                                    shrinkA=1.5, shrinkB=1.5))
 
-    def feature_dimensions(name):
-        return " × ".join(str(value) for value in observed_shapes[name][1:])
-
-    text(0.5, 0.95, "Reference CNN", 15, "bold")
-    text(0.5, 0.885, f"{trainable_parameters:,} trainable parameters", 11)
-    box_texts = []
-    box_texts.append(box(0.14, 0.61, 0.205, "RGB input", "3 × 224 × 224", "#F2F4F5"))
-    for centre, name, channels in [(0.38, "features.2", 32),
-                                    (0.62, "features.5", 64),
-                                    (0.86, "features.8", 128)]:
-        box_texts.append(box(centre, 0.61, 0.205, f"Conv {channels}\nReLU → MaxPool",
-                             feature_dimensions(name), "#E6EEF3"))
+    text(0.5, 0.94, "Reference CNN Architecture", 16, "bold")
+    box(0.14, 0.47, 0.205, 0.35, "Input", "RGB image\n224 × 224 pixels",
+        "#F2F4F5", 0.62)
+    for centre, block, channels in [(0.38, 1, 32), (0.62, 2, 64), (0.86, 3, 128)]:
+        box(centre, 0.47, 0.205, 0.35, f"Convolutional\nblock {block}",
+            f"{channels} filters\n3 × 3 convolution\nReLU\n2 × 2 max pooling",
+            "#E6EEF3", 0.595)
     for left, right in [(0.2425, 0.2775), (0.4825, 0.5175), (0.7225, 0.7575)]:
-        arrow((left, 0.71), (right, 0.71))
-    arrow((0.86, 0.61), (0.86, 0.45))
-    box_texts.append(box(0.86, 0.25, 0.25, "Adaptive average\npooling → Flatten",
-                         f"{observed_shapes['classifier.1'][1]} values", "#EDF1E8"))
-    box_texts.append(box(0.50, 0.25, 0.25, f"Dropout (p = {model.classifier[2].p})",
-                         f"{observed_shapes['classifier.2'][1]} values", "#EDF1E8"))
-    box_texts.append(box(0.14, 0.25, 0.25, "Linear (128 → 8)",
-                         f"{observed_shapes['classifier.3'][1]} raw class scores", "#EDF1E8"))
-    arrow((0.735, 0.35), (0.625, 0.35))
-    arrow((0.375, 0.35), (0.265, 0.35))
-    text(0.5, 0.17, "Feature-map dimensions: channels × height × width", 10.5)
-    text(0.5, 0.105, "Convolutions: 3×3 kernels, stride 1, padding 1", 10.5)
-    text(0.5, 0.045, "Max pooling: 2×2, stride 2", 10.5)
+        arrow((left, 0.645), (right, 0.645))
+    arrow((0.86, 0.47), (0.86, 0.36))
+    box(0.86, 0.15, 0.255, 0.21, "Adaptive average\npooling", "128 features",
+        "#EDF1E8", 0.205)
+    box(0.50, 0.15, 0.255, 0.21, "Dropout", "30%", "#EDF1E8", 0.205)
+    box(0.14, 0.15, 0.255, 0.21, "Output", "8 class scores", "#EDF1E8", 0.205)
+    arrow((0.7325, 0.255), (0.6275, 0.255))
+    arrow((0.3725, 0.255), (0.2675, 0.255))
+    text(0.5, 0.055, f"{trainable_parameters:,} trainable parameters", 10.5)
 
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
@@ -145,9 +138,14 @@ def main():
     verify("all_text_inside_canvas", all(
         fig.bbox.contains(bound.x0, bound.y0) and fig.bbox.contains(bound.x1, bound.y1)
         for bound in bounds))
-    verify("box_titles_and_shapes_do_not_overlap", all(
-        not title.get_window_extent(renderer).overlaps(shape.get_window_extent(renderer))
-        for title, shape in box_texts))
+    verify("box_titles_and_details_do_not_overlap", all(
+        not heading.get_window_extent(renderer).overlaps(detail.get_window_extent(renderer))
+        for _, heading, detail in box_texts))
+    verify("all_box_text_inside_boxes", all(
+        patch.get_window_extent(renderer).contains(bound.x0, bound.y0)
+        and patch.get_window_extent(renderer).contains(bound.x1, bound.y1)
+        for patch, heading, detail in box_texts
+        for bound in [heading.get_window_extent(renderer), detail.get_window_extent(renderer)]))
     verify("model_source_unchanged", hashlib.sha256(source.read_bytes()).hexdigest() == source_hash)
     figure_path = root / "outputs/figures/reference_cnn_architecture.png"
     metrics_path = root / "outputs/metrics/reference_cnn_architecture_check.json"
@@ -164,7 +162,8 @@ def main():
         "total_parameters": total_parameters, "trainable_parameters": trainable_parameters,
         "checks": checks, "failed_checks": [],
         "figure": {"path": figure_path.relative_to(root).as_posix(),
-                   "inches": [7, 4.5], "dpi": 300, "pixels": [2100, 1350]},
+                   "inches": [7.4, 4.5], "dpi": 300, "pixels": [2220, 1350],
+                   "sha256": hashlib.sha256(figure_path.read_bytes()).hexdigest()},
     }
     metrics_path.write_text(json.dumps(evidence, indent=2) + "\n", encoding="utf-8")
     print(f"Verified {len(checks)} checks; {trainable_parameters:,} trainable parameters.")

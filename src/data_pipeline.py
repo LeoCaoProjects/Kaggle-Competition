@@ -23,7 +23,7 @@ def seed_everything(seed=42):
 
 
 def resize_geometry(width, height):
-    """Notebook 03 geometry: half-up rounding, odd padding right/bottom."""
+    """Reference geometry: half-up rounding, odd padding right/bottom."""
     longest = max(width, height)
     new_width = max(1, (2 * width * TARGET + longest) // (2 * longest))
     new_height = max(1, (2 * height * TARGET + longest) // (2 * longest))
@@ -130,3 +130,20 @@ class FacialFeatureDataset(Dataset):
                     with self.augmentation(rgb) as augmented:
                         tensor = reference_preprocess(augmented)
         return tensor, int(self.class_to_index[row["class"]]), row["image_id"]
+
+
+class ImageNetNormalizedDataset(Dataset):
+    """Wrap verified /255 tensors; retain IDs, labels, geometry and augmentation."""
+    def __init__(self, base):
+        self.base = base
+        self.mean = torch.tensor([0.485, 0.456, 0.406], dtype=torch.float32)[:, None, None]
+        self.std = torch.tensor([0.229, 0.224, 0.225], dtype=torch.float32)[:, None, None]
+
+    def __len__(self):
+        return len(self.base)
+
+    def __getitem__(self, index):
+        image, label, image_id = self.base[index]
+        if image.dtype != torch.float32 or image.shape != (3, 224, 224):
+            raise ValueError("Expected reference-preprocessed float32 [3,224,224]")
+        return (image - self.mean) / self.std, label, image_id

@@ -1,0 +1,6 @@
+# Keep checksum-bearing evidence byte-identical in clones and downloads.
+# Accept its original CRLF endings without disabling other whitespace checks.
+data/processed/*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+data/processed/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+outputs/metrics/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+outputs/submissions/*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

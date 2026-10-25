@@ -17,13 +17,13 @@ kaggle.json
 *.pem
 *.key
 
-# Competition data and derived data (retain directory placeholders)
+# External images and unnecessary derived data; retain required audit/split metadata
 data/raw/*
 !data/raw/.gitkeep
 data/processed/*
-!data/processed/.gitkeep
 !data/processed/class_mapping.json
 !data/processed/split_manifest.csv
+!data/processed/training_manifest.csv
 enge707_train_cache/
 *.zip
 *.tar
@@ -32,10 +32,10 @@ enge707_train_cache/
 *.7z
 *.rar
 outputs/transfer/
+outputs/reproduction/
 
 # Model weights; small figures/metrics are intentionally eligible for Git
 outputs/models/*
-!outputs/models/.gitkeep
 *.pt
 *.pth
 *.onnx
