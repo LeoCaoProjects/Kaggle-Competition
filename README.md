@@ -54,8 +54,4 @@ To use the final checkpoint without retraining, open notebook **06**, keep
 Complete checkpoints load strictly with no pretrained download. Only a new
 E1 training run requires official torchvision ImageNet V2 weights.
 
-Original evidence lives in `outputs/metrics/<run>/`, `outputs/models/`,
-`outputs/figures/` and `outputs/submissions/`. The final CSV is
-`outputs/submissions/submission_E2.csv`. Original configurations and hashes
-record the historical code. New runs use exclusive `outputs/reproduction/`
-(or `/kaggle/working/reproduction/`) directories and never overwrite evidence.
+Saved models, results and figures are in `outputs/`. The final Kaggle submission is `outputs/submissions/submission_E2.csv`. New runs save separately under `outputs/reproduction/`.
